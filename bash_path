@@ -14,3 +14,7 @@ export PATH="$PATH:${HOME}/Script"
 # Homebrew binaries priority
 export PATH=${PATH//\/usr\/local\/bin:/} #removing duplicates
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+# Google depot tools
+# https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up
+export PATH=$PATH:~/work/tools/depot_tools
