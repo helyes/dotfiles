@@ -1,0 +1,6 @@
+alias sctunnel_to_db='ssh -L 5433:$(ctae.sh -g shiftcare_rds_host):5432 -i $(ctae.sh -g CONFIG_PRIVATE_KEY_FILE) $(ctae.sh -g CONFIG_EC2_USER_NAME)@$( aws ec2  describe-instances --instance-ids "$(ctae.sh -g stg-dj1)" | grep "PublicIpAddress" | grep -o "[0-9\\.]\\+")'
+alias sctunnel_to_db-dj3='ssh -L 5433:$(ctae.sh -g shiftcare_rds_host):5432 -i $(ctae.sh -g CONFIG_PRIVATE_KEY_FILE) $(ctae.sh -g CONFIG_EC2_USER_NAME)@$( aws ec2  describe-instances --instance-ids "$(ctae.sh -g stg-dj3)" | grep "PublicIpAddress" | grep -o "[0-9\\.]\\+")'
+alias scstartserver='cd ${HOME}/work/sc/shiftcare && bundle exec rails s -p 3000'
+alias scmigratetest='cd ${HOME}/work/sc/shiftcare && RAILS_ENV=test bundle exec rake db:migrate'
+alias scmigratedev='cd ${HOME}/work/sc/shiftcare && bundle exec rake db:migrate'
+alias scrailsconsole='cd ${HOME}/work/sc/shiftcare && bundle exec rails console'

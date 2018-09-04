@@ -1,0 +1,63 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+ulimit -S -n 2048
+
+# Don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoredups
+# ... and ignore same sucessive entries.
+export HISTCONTROL=ignoreboth
+
+# Save timestamps in the history file.
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
+
+# Increasing history size
+export HISTFILE="${HOME}/work/.config/user/home/.bash_history"
+export HISTSIZE=3000
+export HISTFILESIZE="${HISTSIZE}"
+
+# When running less, always ignore case on searches; prompt verbosely; display colors;
+#  highlight first new line; tabs are 4 chars wide.
+export LESS='-I -M -R -W -x4'
+
+# Set the default editor to nano
+export EDITOR=nano
+
+# Exit the shell if we get 2 CTRL-D in a row.
+export IGNOREEOF=1
+
+# Check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# Don't try to find all the command possibilities when hitting TAB on an empty line.
+shopt -s no_empty_cmd_completion
+
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend;
+
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
+
+# Make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+export LESSOPEN="|lesspipe.sh %s"
+
+
+# Any other local customisations.
+if [ -f ~/.bashrc_local ]; then
+	. ~/.bashrc_local
+fi
+
+export NVM_DIR="${HOME}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+
+# androisd sdk
+# export ANDROID_SDK=$HOME/Library/Android/sdk
+# export PATH="$PATH:$ANDROID_SDK/emulator:$ANDROID_SDK/tools"
+
+# rbenv
+# To check: curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+export RBENV_ROOT="${HOME}/work/.config/rbenv"
+eval "$(rbenv init -)"
+

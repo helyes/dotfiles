@@ -1,0 +1,26 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = helyes
+	email = helyesa@gmail.com
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+[core]
+	excludesfile = ~/work/.config/user/home/gitignore_global
+	fileMode = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = true
+[commit]
+	template = ~/work/.config/user/home/gitCommitMsg
+[diff]
+	renameLimit = 4000

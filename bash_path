@@ -1,0 +1,16 @@
+#export PATH=/usr/local/bin:$PATH  #add one back to the front of the path
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#gpg
+export PATH=$PATH:/usr/local/opt/gnupg@1.4/libexec/gpgbin
+
+#flutter
+export PATH="$PATH:${HOME}/Applications/flutter/bin"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$PATH:${HOME}/Script"
+
+# Homebrew binaries priority
+export PATH=${PATH//\/usr\/local\/bin:/} #removing duplicates
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
