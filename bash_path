@@ -3,9 +3,6 @@
 #gpg
 export PATH=$PATH:/usr/local/opt/gnupg@1.4/libexec/gpgbin
 
-#flutter
-export PATH="$PATH:${HOME}/Applications/flutter/bin"
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -18,3 +15,11 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # Google depot tools
 # https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up
 export PATH=$PATH:~/work/tools/depot_tools
+
+# Flutter
+export PATH="$PATH:${HOME}/Applications/flutter/bin"
+
+# Android sdk home
+export ANDROID_HOME="${HOME}/Library/Android/sdk"
+#export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools"

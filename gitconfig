@@ -10,7 +10,7 @@
 [push]
 	default = simple
 [core]
-	excludesfile = ~/work/.config/user/home/gitignore_global
+	excludesfile = /Users/andras/work/.config/user/home/gitignore_global
 	fileMode = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"

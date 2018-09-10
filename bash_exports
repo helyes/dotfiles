@@ -52,12 +52,10 @@ export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
-# androisd sdk
-# export ANDROID_SDK=$HOME/Library/Android/sdk
-# export PATH="$PATH:$ANDROID_SDK/emulator:$ANDROID_SDK/tools"
 
 # rbenv
 # To check: curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 export RBENV_ROOT="${HOME}/work/.config/rbenv"
 eval "$(rbenv init -)"
 
+eval "$(pyenv init -)"
