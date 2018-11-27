@@ -58,4 +58,7 @@ export NVM_DIR="${HOME}/.nvm"
 export RBENV_ROOT="${HOME}/work/.config/rbenv"
 eval "$(rbenv init -)"
 
+export PYENV_ROOT="${HOME}/work/.config/pyenv"
+# export PATH="$PATH:$PYENV_ROOT/bin"
+
 eval "$(pyenv init -)"
