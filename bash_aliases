@@ -58,6 +58,9 @@ alias gss='git status -sb'
 alias ipp='echo `wget -qO- ipinfo.io/ip`'
 alias ipl="ifconfig -a | perl -nle'/(\\d+\\.\\d+\\.\\d+\\.\\d+)/ && print $1'"
 
+# sort env
+alias envs='env | sort'
+
 #fun
 alias weather='curl -4 http://wttr.in/Brisbane'
 alias yolo='curl -s http://whatthecommit.com/index.txt'
