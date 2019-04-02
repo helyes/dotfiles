@@ -53,3 +53,113 @@ function gitdeletebranch() {
 	git push --delete "${origin}" "${branch}"
 
 }
+
+function pigzfolder() {
+	local folder="${1%/}";
+	echo "Gzipping folder: ${folder}"
+	if [ ! -d "${folder}" ]; then
+  		echo "${folder} does not exist. Giving up..."
+		return
+	fi
+	local dir
+	dir=$(pwd)
+	
+	cd "${folder}" || (echo "${folder} does not exist. Giving up..." && return)
+	tar cv -- * | pigz -c > "${dir}/${folder}.tar.gz"
+	cd - || (echo "${folder} could not jump back to directory: ${dir}" && return)
+}
+
+function pigzextract() {
+	local file="${1}";
+	local dir
+	dir=$(pwd)
+	if [ -d "${dir}/${file%%.*}" ]; then
+  		echo "${dir}/${file%%.*} already exist. Giving up..."
+		return
+	fi
+
+	pigz -cd "${file}" | tar xfv -
+}
+
+function scngrok() {
+	local action="${1:-'up'}";
+	local host="${2:-'app.lvh.me:3000'}";
+	local logfile
+	logfile="/tmp/ngrok.$(date +'%Y-%m-%d').log"
+	command -v ngrok >/dev/null 2>&1 || { echo >&2 "scngrok requires ngrok but it's not installed."; return 1; }
+
+	case ${action} in
+	up) echo "Starting ngrok for host ${host}"	
+		nohup ngrok http -host-header=rewrite "${host}" >> "${logfile}" &
+		printf "Appending logs to %s\n" "${logfile}"
+		sleep 2
+		host=$(curl -s --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"([^"]*).*/\1/p')
+		printf "\nNgrok host: %s\n" "${host}"
+		;;
+	down) echo "Stopping all ngrok instances..."
+	    killall ngrok
+		;;
+	status) echo  "Fetching ngrok status..."
+		printf "\nLog file: %s\n\n" "${logfile}"
+		command -v jq >/dev/null 2>&1 || { echo >&2 "[${action}] requires jq but it's not installed. Check https://formulae.brew.sh/formula/jq"; return 1; }
+		curl -s http://localhost:4040/api/tunnels/command_line | jq -r --unbuffered
+		return 0
+		;;
+	tunnels) echo  "Fetching ngrok tunnels..."
+		curl -s --show-error http://127.0.0.1:4040/api/tunnels | jq -r --unbuffered
+		;;
+	host) echo  "Fetching ngrok https host..."
+		command -v jq >/dev/null 2>&1 || { echo >&2 "[${action}] requires jq but it's not installed. Check https://formulae.brew.sh/formula/jq"; return 1; }
+		host=$(curl -s --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"([^"]*).*/\1/p')
+		printf "\nNgrok host: %s\n" "${host}"
+		;;
+	clipboard) echo  "Copyying ngrok host to clipboard"
+		host=$(curl -s --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"([^"]*).*/\1/p')
+		printf "%s" "${host}" | pbcopy
+		printf "\n%s copied to clipboard\n" "${host}"
+		;;
+	*) printf "\nUsage: scngrok [up|down|status|clipboard] [hostname:app.lvh.me:3000]\n"
+	;;
+	esac
+}
+
+complete -W "up down status tunnels host clipboard" scngrok
+
+ 
+function scdescribestack() {
+	local instance="${1:-staging}";
+	local status="${2:-online}";
+	printf "\nFetching %s %s instance statuses\n\n" "${status}" "${instance}"
+	local accepted_statuses=(online all)
+	local status_found
+	status_found=$(printf "#%s#" "${accepted_statuses[@]}" | grep -o "#${status}#" | wc -l | tr -d '[:space:]')
+	if [ "${status_found}" == '0' ]; then
+		printf "Second parameter must be 'all' or 'online'. Exiting"
+		return 1
+	fi
+	
+	local ctae_instance_config="shiftcare_stack_id_$instance"
+	local jq_filter=".Instances [] | {host: .Hostname, status: .Status, instanceId: .Ec2InstanceId, opsworksid: .InstanceId}"
+	if [ "${status}" == "online" ]; then
+		jq_filter="${jq_filter} | select(.status==\"online\")"
+	fi
+	
+	aws opsworks --region us-east-1 describe-instances --stack-id "$(ctae.sh -g "${ctae_instance_config}")" |  jq "${jq_filter}"
+}
+
+# scdescribestack
+if type complete &>/dev/null; then
+	_scdescribestack_completion()
+	{  	
+		COMPREPLY=()
+		case "${#COMP_WORDS[@]}" in
+		2) # COMPREPLY=($(compgen -W "development production staging" "${COMP_WORDS[1]}")) <-- simple way, shellcheck is not happy
+		   while IFS='' read -r line; do COMPREPLY+=("$line"); done < <(compgen -W "development production staging" "${COMP_WORDS[1]}")
+		   ;;
+		3) while IFS='' read -r line; do COMPREPLY+=("$line"); done < <(compgen -W "online all" "${COMP_WORDS[2]}")
+		   ;;
+		esac
+	}
+
+	complete -F _scdescribestack_completion scdescribestack
+fi
