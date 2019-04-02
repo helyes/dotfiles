@@ -6,7 +6,7 @@ export PATH=$PATH:/usr/local/opt/gnupg@1.4/libexec/gpgbin
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export PATH="$PATH:${HOME}/Script"
+export PATH="$PATH:${HOME}/Script:${HOME}/Applications"
 
 # Homebrew binaries priority
 export PATH=${PATH//\/usr\/local\/bin:/} #removing duplicates

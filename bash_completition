@@ -77,4 +77,4 @@ fi;
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
 # ctae.sh
-complete -W "$(grep -v "#" $(ctae.sh -k) | grep -v "CONFIG" | grep . | sed -e 's/=.*//g'| tr '\n' ' ' | sort)" ctae.sh
+complete -W "$(grep -v "#" $(ctae.sh -k) | grep -v "CONFIG" | grep "=i-" | sed -e 's/=.*//g'| tr '\n' ' ' | sort)" ctae.sh
