@@ -1,7 +1,19 @@
-alias sctunnel_to_db='ssh -L 5433:$(ctae.sh -g shiftcare_rds_host):5432 -i $(ctae.sh -g CONFIG_PRIVATE_KEY_FILE) $(ctae.sh -g CONFIG_EC2_USER_NAME)@$( aws ec2  describe-instances --instance-ids "$(ctae.sh -g stg-dj1)" | grep "PublicIpAddress" | grep -o "[0-9\\.]\\+")'
-alias sctunnel_to_db-dj3='ssh -L 5433:$(ctae.sh -g shiftcare_rds_host):5432 -i $(ctae.sh -g CONFIG_PRIVATE_KEY_FILE) $(ctae.sh -g CONFIG_EC2_USER_NAME)@$( aws ec2  describe-instances --instance-ids "$(ctae.sh -g stg-dj3)" | grep "PublicIpAddress" | grep -o "[0-9\\.]\\+")'
-alias sctunnel_to_db-prd-dj1='ssh -L 5433:$(ctae.sh -g shiftcare_rds_host):5432 -i $(ctae.sh -g CONFIG_PRIVATE_KEY_FILE) $(ctae.sh -g CONFIG_EC2_USER_NAME)@$( aws ec2  describe-instances --instance-ids "$(ctae.sh -g prd-dj1)" | grep "PublicIpAddress" | grep -o "[0-9\\.]\\+")'
-alias scstartserver='cd ${HOME}/work/sc/shiftcare && bundle exec rails s -p 3000'
 alias scmigratetest='cd ${HOME}/work/sc/shiftcare && RAILS_ENV=test bundle exec rake db:migrate'
 alias scmigratedev='cd ${HOME}/work/sc/shiftcare && bundle exec rake db:migrate'
 alias scrailsconsole='cd ${HOME}/work/sc/shiftcare && bundle exec rails console'
+alias scstartserver='cd ${HOME}/work/sc/shiftcare && bundle exec rails s -p 3000'
+
+# update database.yml / prod  database: shiftcare_development username: gaurav
+alias sccompileassets-prod='cd ${HOME}/work/sc/shiftcare &&  NODE_ENV=production RAILS_ENV=production DB_ADAPTER=nulldb bundle exec rake assets:precompile --trace'
+alias scstartserver-prod='DATABASE=shiftcare_development NODE_ENV=production RAILS_ENV=production SECRET_KEY_BASE=217d421ab3845cd5f3ff9761aef003df5e7c145f58fa4acc7de2f8767e88f5f08a81253b8c55b25df4b418640dc106f831b24692e961420cd2131fa3673e00bd  bundle exec rails s -p 3000'
+
+alias sccompileassets-stg='cd ${HOME}/work/sc/shiftcare &&  NODE_ENV=production RAILS_ENV=staging DB_ADAPTER=nulldb bundle exec rake assets:precompile --trace'
+alias scstartserver-stg='DATABASE=shiftcare_development NODE_ENV=production RAILS_ENV=staging SECRET_KEY_BASE=217d421ab3845cd5f3ff9761aef003df5e7c145f58fa4acc7de2f8767e88f5f08a81253b8c55b25df4b418640dc106f831b24692e961420cd2131fa3673e00bd MIXPANEL_TOKEN=4ab583d638ee766f5d7ac545fc99ea26 RAILS_SERVE_STATIC_FILES=enabled bundle exec rails s -p 3000'
+
+# moved to bitbar
+# staging
+# alias sctunnel_to_db-staging-prd-dj1='ssh -L 5434:$(ctae.sh -g shiftcare_staging_rds_host):5432 -i $(ctae.sh -g CONFIG_PRIVATE_KEY_FILE) $(ctae.sh -g CONFIG_EC2_USER_NAME)@$( aws ec2  describe-instances --instance-ids "$(ctae.sh -g prd-dj1)" | grep "PublicIpAddress" | grep -o "[0-9\\.]\\+")'
+# prod
+# alias sctunnel_to_db='ssh -L 5433:$(ctae.sh -g shiftcare_rds_host):5432 -i $(ctae.sh -g CONFIG_PRIVATE_KEY_FILE) $(ctae.sh -g CONFIG_EC2_USER_NAME)@$( aws ec2  describe-instances --instance-ids "$(ctae.sh -g stg-dj1)" | grep "PublicIpAddress" | grep -o "[0-9\\.]\\+")'
+# alias sctunnel_to_db-dj3='ssh -L 5433:$(ctae.sh -g shiftcare_rds_host):5432 -i $(ctae.sh -g CONFIG_PRIVATE_KEY_FILE) $(ctae.sh -g CONFIG_EC2_USER_NAME)@$( aws ec2  describe-instances --instance-ids "$(ctae.sh -g stg-dj3)" | grep "PublicIpAddress" | grep -o "[0-9\\.]\\+")'
+# alias sctunnel_to_db-prd-dj1='ssh -L 5433:$(ctae.sh -g shiftcare_rds_host):5432 -i $(ctae.sh -g CONFIG_PRIVATE_KEY_FILE) $(ctae.sh -g CONFIG_EC2_USER_NAME)@$( aws ec2  describe-instances --instance-ids "$(ctae.sh -g prd-dj1)" | grep "PublicIpAddress" | grep -o "[0-9\\.]\\+")'
