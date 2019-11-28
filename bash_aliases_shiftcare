@@ -1,7 +1,13 @@
+# Rails
 alias scmigratetest='cd ${HOME}/work/sc/shiftcare && RAILS_ENV=test bundle exec rake db:migrate'
 alias scmigratedev='cd ${HOME}/work/sc/shiftcare && bundle exec rake db:migrate'
 alias scrailsconsole='cd ${HOME}/work/sc/shiftcare && bundle exec rails console'
 alias scstartserver='cd ${HOME}/work/sc/shiftcare && bundle exec rails s -p 3000'
+
+# Docker
+alias drpostgresstart='docker run --rm --name postgres-9.5.15 -e POSTGRES_PASSWORD=postgres  -p 5455:5432 -v $HOME/work/volumes/docker/postgres:/var/lib/postgresql/data -d postgres:9.5.15-alpine'
+alias drpostgresstop='docker stop postgres-9.5.15'
+
 
 # update database.yml / prod  database: shiftcare_development username: gaurav
 alias sccompileassets-prod='cd ${HOME}/work/sc/shiftcare &&  NODE_ENV=production RAILS_ENV=production DB_ADAPTER=nulldb bundle exec rake assets:precompile --trace'
