@@ -62,3 +62,6 @@ export PYENV_ROOT="${HOME}/work/.config/pyenv"
 # export PATH="$PATH:$PYENV_ROOT/bin"
 
 eval "$(pyenv init -)"
+
+# turn off zsh warning on catalina : The default interactive shell is now zsh. ...
+export BASH_SILENCE_DEPRECATION_WARNING=1
