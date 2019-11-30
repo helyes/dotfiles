@@ -16,9 +16,10 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up
 export PATH=$PATH:~/work/tools/depot_tools
 
-# Flutter and dart
+# Flutter
 FLUTTER_HOME="${HOME}/Applications/flutter"
-export PATH="$PATH:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin"
+# export PATH="$PATH:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin"
+export PATH="$PATH:${FLUTTER_HOME}/bin"
 
 # Android sdk home
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
@@ -26,4 +27,8 @@ export ANDROID_HOME="${HOME}/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools"
 
 # aws eb cli
-export PATH="$PATH:/Users/andras/.local/bin"
+export PATH="$PATH:${HOME}/.local/bin"
+
+# Dart stagehand
+export PATH="$PATH:${HOME}/.pub-cache/bin"
+
