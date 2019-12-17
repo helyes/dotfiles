@@ -32,3 +32,9 @@ Multiple instances of below files can be added.
 * bash_function
 
 As an example, if `bash_aliases`, `bash_aliases_2` and `bash_aliasesfoo` exist, all three will be sourced.
+
+# Finicky
+
+Install: https://github.com/johnste/finicky
+
+Symlink `~/.finicky.js` to point to `finicky.js` in the repo
