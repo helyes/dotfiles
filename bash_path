@@ -32,3 +32,6 @@ export PATH="$PATH:${HOME}/.local/bin"
 # Dart stagehand
 export PATH="$PATH:${HOME}/.pub-cache/bin"
 
+# Rust
+export CARGO_HOME="${HOME}/Applications/.cargo"
+export PATH="$PATH:$CARGO_HOME/bin"
