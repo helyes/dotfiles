@@ -24,3 +24,5 @@
 	template = ~/work/.config/user/home/gitCommitMsg
 [diff]
 	renameLimit = 4000
+[alias]
+	fame = python loadtest.py  -m gitfame
