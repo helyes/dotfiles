@@ -65,3 +65,8 @@ eval "$(pyenv init -)"
 
 # turn off zsh warning on catalina : The default interactive shell is now zsh. ...
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+export MYA_ALIASES_HOME="${HOME}/work/helyes/rust/mya/aliases"
+
+#pass
+export PASSWORD_STORE_DIR="${HOME}/work/.config/password-store"
