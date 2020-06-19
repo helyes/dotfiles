@@ -40,3 +40,6 @@ for file in $DOTFILES_LOCATION/$FUNCTION_FILES; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
