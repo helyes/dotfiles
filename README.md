@@ -9,6 +9,7 @@ Symlink default files in home to the below ones in repo
 ~/.finicky.js -> finicky.js
 ~/.gitconfig -> gitconfig
 ln -s ~/work/.config/user/home/hammerspoon ~/.hammerspoon
+ln -s ~/work/.config/user/home/karabiner ~/.config/karabiner
 ```
 
 ## Loading order
@@ -44,3 +45,6 @@ Symlink `~/.finicky.js` to point to `finicky.js` in the repo
 Samples: https://github.com/Hammerspoon/hammerspoon/wiki/Sample-Configurations
 https://github.com/jkroes/oh-my-hammerspoon
 https://github.com/digitalbase/hammerspoon/blob/master/init.lua
+
+# Karabiner
+https://karabiner-elements.pqrs.org/docs/
