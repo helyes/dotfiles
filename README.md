@@ -8,6 +8,7 @@ Symlink default files in home to the below ones in repo
 ~/.bash_profile -> bash_profile
 ~/.finicky.js -> finicky.js
 ~/.gitconfig -> gitconfig
+ln -s ~/work/.config/user/home/hammerspoon ~/.hammerspoon
 ```
 
 ## Loading order
@@ -38,3 +39,8 @@ As an example, if `bash_aliases`, `bash_aliases_2` and `bash_aliasesfoo` exist, 
 Install: https://github.com/johnste/finicky
 
 Symlink `~/.finicky.js` to point to `finicky.js` in the repo
+
+# Hammerspoon
+Samples: https://github.com/Hammerspoon/hammerspoon/wiki/Sample-Configurations
+https://github.com/jkroes/oh-my-hammerspoon
+https://github.com/digitalbase/hammerspoon/blob/master/init.lua

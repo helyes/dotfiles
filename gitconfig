@@ -26,3 +26,5 @@
 	renameLimit = 4000
 [alias]
 	fame = python loadtest.py  -m gitfame
+[pull]
+	rebase = false
