@@ -42,16 +42,32 @@ function vscode()
   openApp("Visual Studio Code")
 end
 
-hs.hotkey.bind(hyper, 'c', chrome)
-hs.hotkey.bind(hyper, 'f', firefox)
-hs.hotkey.bind(hyper, 'i', iterm)
-hs.hotkey.bind(hyper, 'v', vscode)
+function forklift()
+  openApp("ForkLift")
+end
 
--- sleep
-hs.hotkey.bind(hyper, '=', function()
+function toggleSleep()
   if (hs.caffeinate.toggle("systemIdle")) then
     hs.alert.show("Preventing sleep")
   else
     hs.alert.show("Allowing sleep")
   end
-end)
+end
+
+
+-- apps
+hs.hotkey.bind(hyper, 'c', chrome)
+hs.hotkey.bind(hyper, 'f', firefox)
+hs.hotkey.bind(hyper, 'i', iterm)
+hs.hotkey.bind(hyper, 'v', vscode)
+hs.hotkey.bind(hyper, 'z', forklift)
+
+-- sleep
+hs.hotkey.bind(hyper, '=', toggleSleep)
+-- hs.hotkey.bind(hyper, '=', function()
+--   if (hs.caffeinate.toggle("systemIdle")) then
+--     hs.alert.show("Preventing sleep")
+--   else
+--     hs.alert.show("Allowing sleep")
+--   end
+-- end)

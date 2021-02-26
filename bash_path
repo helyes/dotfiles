@@ -35,3 +35,6 @@ export PATH="$PATH:${HOME}/.pub-cache/bin"
 # Rust
 export CARGO_HOME="${HOME}/Applications/.cargo"
 export PATH="$PATH:$CARGO_HOME/bin"
+
+# Neovim (nvim)
+export PATH="$PATH:${HOME}/work/.config/rbenv/versions/2.3.8/lib/ruby/gems/2.3.0/"
