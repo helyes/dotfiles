@@ -105,53 +105,22 @@ scrolling:
 
 # Font configuration
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    family: Hack Nerd Font Mono
-
-    # The `style` can be specified to pick a specific face.
-    # style: Regular
-
-  # Bold font face
-  #bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
-
-  # Italic font face
-  #italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Italic
-
-  # Bold italic font face
-  #bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
-
-  # Point size
+    # family: JetBrains Mono
+    # family: Hack Nerd Font Mono
+    # *Mono.ttf fonts do not have ligeratures https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Ligatures/LightItalic/complete
+    family: JetBrainsMono Nerd Font
+    style: ExtraLight
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+  use_thin_strokes: false
   size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
@@ -392,7 +361,7 @@ colors: *nord
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
-#bell:
+bell:
   # Visual Bell Animation
   #
   # Animation effect for flashing the screen when the visual bell is rung.
@@ -409,13 +378,14 @@ colors: *nord
   #   - EaseOutCirc
   #   - Linear
   #animation: EaseOutExpo
+  animation: EaseOutQuint
 
   # Duration of the visual bell flash in milliseconds. A `duration` of `0` will
   # disable the visual bell animation.
-  #duration: 0
+  duration: 6
 
   # Visual bell animation color.
-  #color: '#ffffff'
+  color: '#2e3440'
 
   # Bell Command
   #
