@@ -54,9 +54,11 @@ Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
 
+Plug 'phaazon/hop.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-
+Plug 'EdenEast/nightfox.nvim', { 'branch': 'main' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " Entertainment
 "Plug 'ryanss/vim-hackernews'
@@ -87,6 +89,10 @@ set termguicolors
 " Transparent Background (For i3 and compton)
 highlight Normal guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE ctermbg=NONE
+
+" Tokyo night https://github.com/folke/tokyonight.nvim
+" storm, a darker variant night and day 
+let g:tokyonight_style = "storm" 
 
 " Calvera
 let g:calvera_italic_comments = 1
@@ -281,3 +287,4 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
 lua require('basic')
+lua require'hop'.setup()

@@ -45,7 +45,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Hyper + h -> left arrow | https://ke-complex-modifications.pqrs.org/?q=hjkl |  https://github.com/suliveevil/Capslock",
+                                "description": "Hyper + h -> left arrow | https://github.com/suliveevil/Capslock/blob/master/macOS/karabiner.json",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
@@ -126,8 +126,7 @@
                             }
                         ]
                     }
-                ],
-                "title": "https://ke-complex-modifications.pqrs.org/?q=hjkl && https://github.com/suliveevil/Capslock/blob/master/macOS/karabiner.json"
+                ]
             },
             "devices": [
                 {

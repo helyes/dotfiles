@@ -29,11 +29,11 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_shift",
+                                        "key_code": "left_shift",
                                         "modifiers": [
-                                            "right_command",
-                                            "right_control",
-                                            "right_option"
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
                                         ]
                                     }
                                 ],
@@ -45,15 +45,15 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Hyper + h -> left arrow | https://ke-complex-modifications.pqrs.org/?q=hjkl |  https://github.com/suliveevil/Capslock",
+                                "description": "Hyper + h -> left arrow | https://github.com/suliveevil/Capslock",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_control",
-                                            "right_shift",
-                                            "right_option"
+                                            "left_command",
+                                            "left_control",
+                                            "left_shift",
+                                            "left_option"
                                         ]
                                     }
                                 },
@@ -63,87 +63,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
-                            {
-                                "description": "Hyper + l -> right arrow | https://github.com/suliveevil/Capslock/blob/master/macOS/karabiner.json",
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_control",
-                                            "right_shift",
-                                            "right_option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Hyper + k -> up arrow | https://github.com/suliveevil/Capslock/blob/master/macOS/karabiner.json",
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_control",
-                                            "right_shift",
-                                            "right_option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Hyper + j -> down arrow | https://github.com/suliveevil/Capslock/blob/master/macOS/karabiner.json",
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_control",
-                                            "right_shift",
-                                            "right_option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
                             }
                         ]
                     }
-                ],
-                "title": "https://ke-complex-modifications.pqrs.org/?q=hjkl && https://github.com/suliveevil/Capslock/blob/master/macOS/karabiner.json"
+                ]
             },
-            "devices": [
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 591,
-                        "vendor_id": 1452
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": []
-                }
-            ],
+            "devices": [],
             "fn_function_keys": [
                 {
                     "from": {
