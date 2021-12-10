@@ -17,11 +17,11 @@ export HISTSIZE=3000
 export HISTFILESIZE="${HISTSIZE}"
 
 # When running less, always ignore case on searches; prompt verbosely; display colors;
-#  highlight first new line; tabs are 4 chars wide.
+# highlight first new line; tabs are 4 chars wide.
 export LESS='-I -M -R -W -x4'
 
-# Set the default editor to nano
-export EDITOR=nano
+# Set the default editor to nvim
+export EDITOR=nvim
 
 # Exit the shell if we get 2 CTRL-D in a row.
 export IGNOREEOF=1
