@@ -30,9 +30,12 @@ function alacritty()
   openApp("Alacritty")
 end
 
-
 function chrome()
   openApp("Google Chrome")
+end
+
+function chromium()
+  openApp("Chromium")
 end
 
 function firefox()
@@ -61,6 +64,7 @@ end
 
 -- apps
 hs.hotkey.bind(hyper, 'a', alacritty)
+hs.hotkey.bind(hyper, 'b', chromium)
 hs.hotkey.bind(hyper, 'c', chrome)
 hs.hotkey.bind(hyper, 'f', firefox)
 hs.hotkey.bind(hyper, 'i', iterm)
