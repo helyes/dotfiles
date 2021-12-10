@@ -99,13 +99,13 @@ let g:calvera_italic_comments = 1
 let g:calvera_italic_keywords = 1
 let g:calvera_italic_functions = 1
 let g:calvera_contrast = 1
-colorscheme calvera
+"colorscheme calvera
 
 let g:nord_contrast = v:true
 let g:nord_borders = v:false
-let g:nord_disable_background = v:false
-let g:nord_italic = v:false
-" colorscheme nord
+let g:nord_disable_background = v:true
+let g:nord_italic = v:true
+colorscheme nord
 
 """ Other Configurations
 filetype plugin indent on
@@ -251,11 +251,13 @@ function! ColorZazen()
 endfunction
 
 """ Custom Mappings
-
-let mapleader=","
+" nnoremap <SPACE> <Nop>
+"let mapleader=","
+let mapleader = "\<Space>"
+"map <Space> <Leader>
 nmap <leader>q :NERDTreeToggle<CR>
 nmap \ <leader>q
-nmap <leader>w :TagbarToggle<CR>
+ map <leader>w :TagbarToggle<CR>
 nmap <leader>ee :Colors<CR>
 nmap <leader>ea :AirlineTheme 
 nmap <leader>e1 :call ColorDracula()<CR>
@@ -287,4 +289,4 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
 lua require('basic')
-lua require'hop'.setup()
+" lua require'hop'.setup()

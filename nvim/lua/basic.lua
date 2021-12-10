@@ -1,1 +1,1 @@
-print('hello from nvim/lua/basic.lua')
+print(' hello from nvim/lua/basic.lua')
