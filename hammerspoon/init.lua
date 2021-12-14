@@ -65,9 +65,9 @@ end
 -- apps
 hs.hotkey.bind(hyper, 'a', alacritty)
 hs.hotkey.bind(hyper, 'b', chromium)
-hs.hotkey.bind(hyper, 'c', chrome)
+-- hs.hotkey.bind(hyper, 'c', chrome)
 hs.hotkey.bind(hyper, 'f', firefox)
-hs.hotkey.bind(hyper, 'i', iterm)
+-- hs.hotkey.bind(hyper, 'i', iterm)
 hs.hotkey.bind(hyper, 'v', vscode)
 hs.hotkey.bind(hyper, 'z', forklift)
 
