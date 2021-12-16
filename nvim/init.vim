@@ -1,5 +1,6 @@
 " https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/bin/tmux-cht.sh
 " https://github.com/jessarcher/dotfiles -- https://github.com/anishathalye/dotbot
+" https://github.com/mhartington/dotfiles/tree/main/config/nvim/lua/mh - vim for frontend
 " https://www.bugsnag.com/blog/tmux-and-vim\
 " https://github.com/christoomey/vim-tmux-navigator
 " https://blog.sher.pl/2014/03/21/how-to-boost-your-vim-productivity/
@@ -90,6 +91,8 @@ source ~/.config/nvim/plugin_config/vim_be_good.vim
 source ~/.config/nvim/plugin_config/commentary.vim
 source ~/.config/nvim/plugin_config/hop.vim
 source ~/.config/nvim/plugin_config/lsp_config.vim
+source ~/.config/nvim/plugin_config/lsp_saga.vim
+
 source ~/.config/nvim/plugin_config/lualine.vim
 source ~/.config/nvim/plugin_config/nerdtree.vim
 
