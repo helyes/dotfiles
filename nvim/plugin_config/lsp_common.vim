@@ -1,4 +1,11 @@
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 
 " https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 
@@ -8,8 +15,62 @@ Plug 'neovim/nvim-lspconfig'
 " npm install -g diagnostic-languageserver
 " npm i -g eslint_d prettier
 
-function LspConfigSetup()
+function LspCommonSetup()
 lua << END
+
+ ---------- Setup nvim-cmp --------------
+  local cmp = require'cmp'
+
+  cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      end,
+    },
+    mapping = {
+      ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+      ['<C-e>'] = cmp.mapping({
+        i = cmp.mapping.abort(),
+        c = cmp.mapping.close(),
+      }),
+      -- Accept currently selected item. If none selected, `select` first item.
+      -- Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' }, -- For vsnip users.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
+
+   -- Setup lspconfig.
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+ 
+  ---------- LSP config ----------
+
   local nvim_lsp = require('lspconfig')
   local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -19,9 +80,16 @@ lua << END
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   end
+
+  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+  --  require('lspconfig')['tsserver'].setup {
+  --    capabilities = capabilities
+  --  }
+
   -- TypeScript
   nvim_lsp.tsserver.setup {
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities
   } 
 
   nvim_lsp.diagnosticls.setup {
@@ -81,13 +149,18 @@ lua << END
       }
     }
   }
+
+  
+
+
+
 END
 
 nnoremap <leader>cf <cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>
 
 endfunction
 
-augroup LspConfigSetup
+augroup LspCommonSetup
     autocmd!
-    autocmd User PlugLoaded call LspConfigSetup()
+    autocmd User PlugLoaded call LspCommonSetup()
 augroup END

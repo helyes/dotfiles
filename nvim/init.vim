@@ -90,13 +90,18 @@ call plug#begin('~/.config/nvim/plugged')
 source ~/.config/nvim/plugin_config/vim_be_good.vim
 source ~/.config/nvim/plugin_config/commentary.vim
 source ~/.config/nvim/plugin_config/hop.vim
-source ~/.config/nvim/plugin_config/lsp_config.vim
+" source ~/.config/nvim/plugin_config/lsp_config.vim
+source ~/.config/nvim/plugin_config/lsp_common.vim
+
 source ~/.config/nvim/plugin_config/lsp_saga.vim
 
 source ~/.config/nvim/plugin_config/lualine.vim
 source ~/.config/nvim/plugin_config/nerdtree.vim
 
 source ~/.config/nvim/plugin_config/theme_nord.vim
+
+source ~/.config/nvim/plugin_config/nvim-treesitter.vim
+" source ~/.config/nvim/plugin_config/nvim-cmp.vim
 
 source ~/.config/nvim/plugin_config/vim-floaterm.vim
 source ~/.config/nvim/plugin_config/which-key.vim
