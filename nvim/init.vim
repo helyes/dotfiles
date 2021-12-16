@@ -98,6 +98,8 @@ source ~/.config/nvim/plugin_config/lsp_saga.vim
 source ~/.config/nvim/plugin_config/lualine.vim
 source ~/.config/nvim/plugin_config/nerdtree.vim
 
+source ~/.config/nvim/plugin_config/telescope.vim
+
 source ~/.config/nvim/plugin_config/theme_nord.vim
 
 source ~/.config/nvim/plugin_config/nvim-treesitter.vim

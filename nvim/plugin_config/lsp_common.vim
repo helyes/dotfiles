@@ -72,14 +72,46 @@ lua << END
   ---------- LSP config ----------
 
   local nvim_lsp = require('lspconfig')
+  local protocol = require('vim.lsp.protocol')
+
   local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
     -- Mappings
     -- local opts = { noremap=true, silent=true }
     local opts = { noremap=true }
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  end
+
+    -- does not work ?
+    protocol.CompletionItemKind1 = {
+        '';   -- Text          = 1;
+        '';   -- Method        = 2;
+        'ƒ';   -- Function      = 3;
+        '';   -- Constructor   = 4;
+        '識';  -- Field         = 5;
+        '';   -- Variable      = 6;
+        '';   -- Class         = 7;
+        'ﰮ';   -- Interface     = 8;
+        '';   -- Module        = 9;
+        '';   -- Property      = 10;
+        '';   -- Unit          = 11;
+        '';   -- Value         = 12;
+        '了';  -- Enum          = 13;
+        '';   -- Keyword       = 14;
+        '﬌';   -- Snippet       = 15;
+        '';   -- Color         = 16;
+        '';   -- File          = 17;
+        '渚';  -- Reference     = 18;
+        '';   -- Folder        = 19;
+        '';   -- EnumMember    = 20;
+        '';   -- Constant      = 21;
+        '';   -- Struct        = 22;
+        '鬒';  -- Event         = 23;
+        'Ψ';   -- Operator      = 24;
+        '';   -- TypeParameter = 25;
+      }
+  end -- on_attach
 
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
   --  require('lspconfig')['tsserver'].setup {
@@ -149,10 +181,6 @@ lua << END
       }
     }
   }
-
-  
-
-
 
 END
 
