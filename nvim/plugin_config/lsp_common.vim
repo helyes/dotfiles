@@ -80,8 +80,9 @@ lua << END
     -- Mappings
     -- local opts = { noremap=true, silent=true }
     local opts = { noremap=true }
-    buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'gD', '<CMD>lua vim.lsp.buf.declaration()<CR>', opts)
+    buf_set_keymap('n', 'gd', '<CMD>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'gr', '<CMD>lua vim.lsp.buf.references()<CR>', opts)
 
     -- does not work ?
     protocol.CompletionItemKind1 = {
@@ -123,6 +124,16 @@ lua << END
     on_attach = on_attach,
     capabilities = capabilities
   } 
+
+  -- Ruby
+  nvim_lsp.solargraph.setup {
+    on_attach = on_attach,
+    settings = {
+      solargraph = {
+        diagnostics = true
+      }
+    }
+  }
 
   nvim_lsp.diagnosticls.setup {
     on_attach = on_attach,

@@ -22,7 +22,7 @@ nnoremap K <CMD>lua require('lspsaga.hover').render_hover_doc()<CR>
 inoremap <C-k> <CMD>lua require('lspsaga.signaturehelp').signature_help()<CR>
 nnoremap gs <CMD>lua require('lspsaga.signaturehelp').signature_help()<CR>
 nnoremap gh <CMD>lua require'lspsaga.provider'.lsp_finder()<CR>
-nnoremap gr <CMD>lua require('lspsaga.rename').rename()<CR>
+nnoremap gur <CMD>lua require('lspsaga.rename').rename()<CR>
 nnoremap gp <CMD>lua require'lspsaga.provider'.preview_definition()<CR>
 
 nnoremap <leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>

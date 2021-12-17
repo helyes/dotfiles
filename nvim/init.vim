@@ -4,6 +4,7 @@
 " https://www.bugsnag.com/blog/tmux-and-vim\
 " https://github.com/christoomey/vim-tmux-navigator
 " https://blog.sher.pl/2014/03/21/how-to-boost-your-vim-productivity/
+" https://blog.inkdrop.app/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887
 
 """ General settings
 
