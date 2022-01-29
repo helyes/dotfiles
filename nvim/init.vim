@@ -5,6 +5,7 @@
 " https://github.com/christoomey/vim-tmux-navigator
 " https://blog.sher.pl/2014/03/21/how-to-boost-your-vim-productivity/
 " https://blog.inkdrop.app/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887
+" https://github.com/ray-x/nvim
 
 """ General settings
 
@@ -73,11 +74,15 @@ nmap <leader>= :WhichKey<CR>
 
 map gf :edit <cfile><cr> " Open file that does not exist
 
-imap jj <esc> " Quicky escape to normal mode
+imap jj <esc> " Quickly escape to normal mode
 imap ;; <Esc>A;<Esc> " Add ; to end of the line
 
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
+
+" Editor toggle line numbers: https://phoenixnap.com/kb/how-to-show-line-numbers-vim
+
+
 
 " Automatically install vim-plug
 " let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -90,6 +95,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 source ~/.config/nvim/plugin_config/vim_be_good.vim
 source ~/.config/nvim/plugin_config/commentary.vim
+" source ~/.config/nvim/plugin_config/nvim-cursorline.vim
 source ~/.config/nvim/plugin_config/hop.vim
 " source ~/.config/nvim/plugin_config/lsp_config.vim
 source ~/.config/nvim/plugin_config/lsp_common.vim
