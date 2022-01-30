@@ -16,3 +16,4 @@ augroup FloatermCustomisations
     autocmd!
     autocmd ColorScheme * highlight FloatermBorder guibg=none
 augroup END
+

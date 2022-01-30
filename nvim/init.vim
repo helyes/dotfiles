@@ -9,6 +9,7 @@
 
 """ General settings
 
+" to read current scrollof value, run set scrollof?
 filetype plugin indent on
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
 set incsearch ignorecase smartcase hlsearch
@@ -24,7 +25,7 @@ set relativenumber
 set scrolloff=4
 set sidescrolloff=8
 set noshowmode " lualine shows it
-
+set shell=bash\ -l
 
 " https://github.com/jessarcher/dotfiles
 " set hidden
@@ -73,12 +74,16 @@ nmap <leader>k :nohlsearch<CR> " Remove search highlights
 nmap <leader>= :WhichKey<CR>
 
 map gf :edit <cfile><cr> " Open file that does not exist
+nnoremap <leader>ot :edit /tmp/blah.txt<CR> " Open temp file
 
 imap jj <esc> " Quickly escape to normal mode
 imap ;; <Esc>A;<Esc> " Add ; to end of the line
 
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
+
+nnoremap <leader>ww :w<CR>
+
 
 " Editor toggle line numbers: https://phoenixnap.com/kb/how-to-show-line-numbers-vim
 
@@ -98,6 +103,8 @@ source ~/.config/nvim/plugin_config/commentary.vim
 " source ~/.config/nvim/plugin_config/nvim-cursorline.vim
 source ~/.config/nvim/plugin_config/hop.vim
 " source ~/.config/nvim/plugin_config/lsp_config.vim
+" load rust before lsp_common
+source ~/.config/nvim/plugin_config/rust-tools.vim
 source ~/.config/nvim/plugin_config/lsp_common.vim
 
 source ~/.config/nvim/plugin_config/lsp_saga.vim
