@@ -84,10 +84,23 @@ nmap <S-Tab> :bprevious<CR>
 " Editor shortcuts
 nnoremap <leader>ww :w<CR> " Write file
 nnoremap <leader>bb :bd<CR> " Close buffer 
+
 nnoremap <leader>el :set invnumber invrelativenumber<CR>
-noremap <leader>ep :read !pbpaste<CR>
+noremap <leader>ep :read !pbpaste<CR> " Paste system clipboard
 
+" Git
+" https://github.com/lewis6991/gitsigns.nvim
+nnoremap <leader>egi :Git<CR>
+nnoremap <leader>ego :Git log<CR>
+nnoremap <leader>egb :Git blame<CR>
+nnoremap <leader>egd :Gdiffsplit<CR>
+nnoremap <leader>egs :Git status<CR>
+nnoremap <leader>egc :GBrowse<CR>
+nnoremap <leader>egh <CMD>lua require"gitsigns".blame_line{full=true}<CR>
+nnoremap <leader>egl <CMD>Gitsign toggle_current_line_blame<CR>
+nnoremap <leader>eg- <CMD>Gitsign toggle_deleted<CR>
 
+" Gitsign toggle_current_line_blame*
 " Automatically install vim-plug
 " let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 " if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -103,6 +116,7 @@ Plug 'nvim-lua/plenary.nvim'
 source ~/.config/nvim/plugin_config/vim_be_good.vim
 source ~/.config/nvim/plugin_config/commentary.vim
 " source ~/.config/nvim/plugin_config/nvim-cursorline.vim
+source ~/.config/nvim/plugin_config/gitsigns.vim
 source ~/.config/nvim/plugin_config/hop.vim
 " source ~/.config/nvim/plugin_config/lsp_config.vim
 " load rust before lsp_common
@@ -122,6 +136,8 @@ source ~/.config/nvim/plugin_config/nvim-treesitter.vim
 " source ~/.config/nvim/plugin_config/nvim-cmp.vim
 
 source ~/.config/nvim/plugin_config/vim-floaterm.vim
+source ~/.config/nvim/plugin_config/vim-fugitive.vim
+
 source ~/.config/nvim/plugin_config/which-key.vim
 
 call plug#end()

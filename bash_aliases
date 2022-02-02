@@ -30,6 +30,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias h="history"
+alias vim=nvim
 
 # Print each PATH entry on a separate line
 alias ppath='echo -e ${PATH//:/\\n}'
