@@ -4,4 +4,5 @@
 # got a misterious plugin that adds this
 coverage
 
-nvim/plugged
+nvim/plugged*
+

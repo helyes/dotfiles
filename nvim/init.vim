@@ -1,83 +1,53 @@
-""" https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/bin/tmux-cht.sh
-""" Optixal's Neovim Init.vim
+" https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/bin/tmux-cht.sh
+" https://github.com/jessarcher/dotfiles -- https://github.com/anishathalye/dotbot
+" https://github.com/mhartington/dotfiles/tree/main/config/nvim/lua/mh - vim for frontend
+" https://www.bugsnag.com/blog/tmux-and-vim\
+" https://github.com/christoomey/vim-tmux-navigator
+" https://blog.sher.pl/2014/03/21/how-to-boost-your-vim-productivity/
+" https://blog.inkdrop.app/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887
+" https://github.com/ray-x/nvim
 
-""" Vim-Plug
-call plug#begin()
+""" General settings
 
-" Aesthetics - Main
-Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/vim-journal'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'nightsense/forgotten'
-Plug 'shaunsingh/nord.nvim'
-Plug 'yashguptaz/calvera-dark.nvim'
-Plug 'zaki/zazen'
+" to read current scrollof value, run set scrollof?
+filetype plugin indent on
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
+set incsearch ignorecase smartcase hlsearch
+set ruler laststatus=2 showcmd
+set list listchars=trail:»,tab:»-
+" set listchars=tab:▸\ ,trail:·
+set fillchars+=vert:\ 
+set nowrap breakindent
+set encoding=utf-8
+set number
+set title
+set relativenumber
+set scrolloff=4
+set sidescrolloff=8
+set noshowmode " lualine shows it
+set shell=bash\ -l
 
-" Aethetics - Additional
-Plug 'nightsense/nemo'
-Plug 'yuttie/hydrangea-vim'
-Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
-Plug 'rhysd/vim-color-spring-night'
-Plug 'kyazdani42/nvim-web-devicons'
-
-
-" Functionalities
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'ervandew/supertab'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/vim-easy-align'
-Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-abolish'
-Plug 'Yggdroot/indentLine'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'chrisbra/Colorizer'
-Plug 'KabbAmine/vCoolor.vim'
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
-Plug 'vim-scripts/loremipsum'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'metakirby5/codi.vim'
-Plug 'dkarter/bullets.vim'
-
-Plug 'phaazon/hop.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'EdenEast/nightfox.nvim', { 'branch': 'main' }
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-
-" Entertainment
-"Plug 'ryanss/vim-hackernews'
-
-" Language support
-Plug 'cespare/vim-toml'
-Plug 'stephpy/vim-yaml'
+" https://github.com/jessarcher/dotfiles
+" set hidden
+" set signcolumn=yes:2
+" set termguicolors
+" set undofile
+" set spell
+" set wildmode=longest:full,full
+" set mouse=a
+" set nojoinspaces
+" set splitright
+" set confirm
+" set exrc
+" set backup
+" set backupdir=~/.local/share/nvim/backup//
+" set updatetime=300 " Reduce time for highlighting other references
+" set redrawtime=10000 " Allow more time for loading syntax on large files
 
 
-
-call plug#end()
-
-""" Python3 VirtualEnv
-" let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
-let g:python3_host_prog = '/usr/local/bin/python3'
 
 """ Coloring
 syntax on
-color dracula
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
@@ -86,205 +56,78 @@ highlight NonText guibg=none
 " Opaque Background (Comment out to use terminal's profile)
 set termguicolors
 
-" Transparent Background (For i3 and compton)
-highlight Normal guibg=NONE ctermbg=NONE
-highlight LineNr guibg=NONE ctermbg=NONE
-
-" Tokyo night https://github.com/folke/tokyonight.nvim
-" storm, a darker variant night and day 
-let g:tokyonight_style = "storm" 
-
-" Calvera
-let g:calvera_italic_comments = 1
-let g:calvera_italic_keywords = 1
-let g:calvera_italic_functions = 1
-let g:calvera_contrast = 1
-colorscheme calvera
-
-let g:nord_contrast = v:true
-let g:nord_borders = v:false
-let g:nord_disable_background = v:false
-let g:nord_italic = v:false
+" let g:nord_contrast = v:true
+" let g:nord_borders = v:false
+" let g:nord_disable_background = v:true
+" let g:nord_italic = v:true
 " colorscheme nord
 
-""" Other Configurations
-filetype plugin indent on
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
-set incsearch ignorecase smartcase hlsearch
-set ruler laststatus=2 showcmd showmode
-set list listchars=trail:»,tab:»-
-set fillchars+=vert:\ 
-set wrap breakindent
-set encoding=utf-8
-set number
-set title
-set relativenumber
-
-""" Plugin Configurations
-
-" NERDTree
-let NERDTreeShowHidden=1
-let g:NERDTreeDirArrowExpandable = '↠'
-let g:NERDTreeDirArrowCollapsible = '↡'
-let NERDTreeIgnore = ['\.git$', '^__pycache__$']
-
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline_section_z = ' %{strftime("%-I:%M")}'
-let g:airline_section_warning = ''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-" Neovim :Terminal
-tmap <Esc> <C-\><C-n>
-tmap <C-w> <Esc><C-w>
-"tmap <C-d> <Esc>:q<CR>
-autocmd BufWinEnter,WinEnter term://* startinsert
-autocmd BufLeave term://* stopinsert
-
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-" Disable documentation window
-set completeopt-=preview
-
-" vim-pydocstring
-let g:pydocstring_doq_path = '~/.config/nvim/env/bin/doq'
-
-" Supertab
-let g:SuperTabDefaultCompletionType = "<C-n>"
-
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<C-Space>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<C-x>"
-
-" EasyAlign
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-" indentLine
-let g:indentLine_char = '▏'
-let g:indentLine_color_gui = '#363949'
-
-" TagBar
-let g:tagbar_width = 30
-let g:tagbar_iconchars = ['↠', '↡']
-
-" fzf-vim
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'Type'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Character'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
-""" Filetype-Specific Configurations
-
-" HTML, XML, Jinja
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
-autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
-autocmd FileType htmldjango inoremap {# {#  #}<left><left><left>
-
-" Markdown and Journal
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-""" Custom Functions
-
-" Trim Whitespaces
-function! TrimWhitespace()
-    let l:save = winsaveview()
-    %s/\\\@<!\s\+$//e
-    call winrestview(l:save)
-endfunction
-
-" Dracula Mode (Dark)
-function! ColorDracula()
-    let g:airline_theme=''
-    color dracula
-    IndentLinesEnable
-endfunction
-
-" Seoul256 Mode (Dark & Light)
-function! ColorSeoul256()
-    let g:airline_theme='silver'
-    color seoul256
-    IndentLinesDisable
-endfunction
-
-" Forgotten Mode (Light)
-function! ColorForgotten()
-    " Light airline themes: tomorrow, silver, alduin
-    " Light colors: forgotten-light, nemo-light
-    let g:airline_theme='tomorrow'
-    color forgotten-light
-    IndentLinesDisable
-endfunction
-
-" Zazen Mode (Black & White)
-function! ColorZazen()
-    let g:airline_theme='badcat'
-    color zazen
-    IndentLinesEnable
-endfunction
 
 """ Custom Mappings
+" nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
+nnoremap <leader>vs :source $MYVIMRC<CR> " Source init.vim
+nnoremap <leader>ve :edit ~/.config/nvim/init.vim<CR> " Edit init.vim
 
-let mapleader=","
-nmap <leader>q :NERDTreeToggle<CR>
-nmap \ <leader>q
-nmap <leader>w :TagbarToggle<CR>
-nmap <leader>ee :Colors<CR>
-nmap <leader>ea :AirlineTheme 
-nmap <leader>e1 :call ColorDracula()<CR>
-nmap <leader>e2 :call ColorSeoul256()<CR>
-nmap <leader>e3 :call ColorForgotten()<CR>
-nmap <leader>e4 :call ColorZazen()<CR>
-nmap <leader>r :so ~/.config/nvim/init.vim<CR>
-nmap <leader>t :call TrimWhitespace()<CR>
-xmap <leader>a gaip*
-nmap <leader>a gaip*
-nmap <leader>s <C-w>s<C-w>j:terminal<CR>
-nmap <leader>vs <C-w>v<C-w>l:terminal<CR>
-nmap <leader>d <Plug>(pydocstring)
-nmap <leader>f :Files<CR>
-nmap <leader>g :Goyo<CR>
-nmap <leader>h :RainbowParentheses!!<CR>
-nmap <leader>j :set filetype=journal<CR>
-nmap <leader>k :ColorToggle<CR>
-nmap <leader>l :Limelight!!<CR>
-xmap <leader>l :Limelight!!<CR>
-autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
-"nmap <leader>n :HackerNews best<CR>J
-nmap <silent> <leader><leader> :noh<CR>
+nmap <leader>k :nohlsearch<CR> " Remove search highlights
+nmap <leader>= :WhichKey<CR>
+
+map gf :edit <cfile><cr> " Open file that does not exist
+nnoremap <leader>ot :edit /tmp/blah.txt<CR> " Open temp file
+
+imap jj <esc> " Quickly escape to normal mode
+imap ;; <Esc>A;<Esc> " Add ; to end of the line
+
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 
-nnoremap <leader>sv :source $MYVIMRC<CR>
+" Editor shortcuts
+nnoremap <leader>ww :w<CR> " Write file
+nnoremap <leader>bb :bd<CR> " Close buffer 
+nnoremap <leader>el :set invnumber invrelativenumber<CR>
+noremap <leader>ep :read !pbpaste<CR>
 
+
+" Automatically install vim-plug
+" let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+" if empty(glob(data_dir . '/autoload/plug.vim'))
+"   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" endif
+
+call plug#begin('~/.config/nvim/plugged')
+
+" library used by others
+Plug 'nvim-lua/plenary.nvim'
+
+source ~/.config/nvim/plugin_config/vim_be_good.vim
+source ~/.config/nvim/plugin_config/commentary.vim
+" source ~/.config/nvim/plugin_config/nvim-cursorline.vim
+source ~/.config/nvim/plugin_config/hop.vim
+" source ~/.config/nvim/plugin_config/lsp_config.vim
+" load rust before lsp_common
+source ~/.config/nvim/plugin_config/rust-tools.vim
+source ~/.config/nvim/plugin_config/lsp_common.vim
+
+source ~/.config/nvim/plugin_config/lsp_saga.vim
+
+source ~/.config/nvim/plugin_config/lualine.vim
+source ~/.config/nvim/plugin_config/nerdtree.vim
+
+source ~/.config/nvim/plugin_config/telescope.vim
+
+source ~/.config/nvim/plugin_config/theme_nord.vim
+
+source ~/.config/nvim/plugin_config/nvim-treesitter.vim
+" source ~/.config/nvim/plugin_config/nvim-cmp.vim
+
+source ~/.config/nvim/plugin_config/vim-floaterm.vim
+source ~/.config/nvim/plugin_config/which-key.vim
+
+call plug#end()
+
+doautocmd User PlugLoaded
 
 " https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
 lua require('basic')
-lua require'hop'.setup()
+" lua require'hop'.setup()
