@@ -65,7 +65,6 @@ set termguicolors
 
 """ Custom Mappings
 " nnoremap <SPACE> <Nop>
-"let mapleader=","
 let mapleader = "\<Space>"
 nnoremap <leader>vs :source $MYVIMRC<CR> " Source init.vim
 nnoremap <leader>ve :edit ~/.config/nvim/init.vim<CR> " Edit init.vim
@@ -82,11 +81,11 @@ imap ;; <Esc>A;<Esc> " Add ; to end of the line
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 
-nnoremap <leader>ww :w<CR>
-
-
-" Editor toggle line numbers: https://phoenixnap.com/kb/how-to-show-line-numbers-vim
-
+" Editor shortcuts
+nnoremap <leader>ww :w<CR> " Write file
+nnoremap <leader>bb :bd<CR> " Close buffer 
+nnoremap <leader>el :set invnumber invrelativenumber<CR>
+noremap <leader>ep :read !pbpaste<CR>
 
 
 " Automatically install vim-plug
@@ -97,6 +96,9 @@ nnoremap <leader>ww :w<CR>
 " endif
 
 call plug#begin('~/.config/nvim/plugged')
+
+" library used by others
+Plug 'nvim-lua/plenary.nvim'
 
 source ~/.config/nvim/plugin_config/vim_be_good.vim
 source ~/.config/nvim/plugin_config/commentary.vim
