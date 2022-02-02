@@ -129,6 +129,7 @@ source ~/.config/nvim/plugin_config/lualine.vim
 source ~/.config/nvim/plugin_config/nerdtree.vim
 
 source ~/.config/nvim/plugin_config/telescope.vim
+" source ~/.config/nvim/plugin_config/dashboard-nvim.vim
 
 source ~/.config/nvim/plugin_config/theme_nord.vim
 
