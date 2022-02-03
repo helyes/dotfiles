@@ -5,6 +5,7 @@ function LuaLineSetup()
 lua << END
 
 function branch()
+  -- :echo len(getbufinfo({'buflisted':1}))
   return 'blah'
 end
 

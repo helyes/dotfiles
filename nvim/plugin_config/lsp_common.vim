@@ -127,6 +127,7 @@ lua << END
   } 
 
   -- Ruby
+  -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
   nvim_lsp.solargraph.setup {
     on_attach = on_attach,
     settings = {
@@ -227,6 +228,10 @@ local opts = {
 }
 
 require('rust-tools').setup(opts)
+
+-- VIM
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#vimls
+require('lspconfig').vimls.setup{}
 
 END
 

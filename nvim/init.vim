@@ -118,7 +118,7 @@ source ~/.config/nvim/plugin_config/commentary.vim
 " source ~/.config/nvim/plugin_config/nvim-cursorline.vim
 source ~/.config/nvim/plugin_config/gitsigns.vim
 source ~/.config/nvim/plugin_config/hop.vim
-" source ~/.config/nvim/plugin_config/lsp_config.vim
+
 " load rust before lsp_common
 source ~/.config/nvim/plugin_config/rust-tools.vim
 source ~/.config/nvim/plugin_config/lsp_common.vim
