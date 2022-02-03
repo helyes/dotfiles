@@ -233,6 +233,10 @@ require('rust-tools').setup(opts)
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#vimls
 require('lspconfig').vimls.setup{}
 
+-- BASH
+-- https://github.com/bash-lsp/bash-language-server#neovim
+require'lspconfig'.bashls.setup{}
+
 END
 
 nnoremap <leader>cf <cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>

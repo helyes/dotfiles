@@ -100,6 +100,19 @@ nnoremap <leader>egh <CMD>lua require"gitsigns".blame_line{full=true}<CR>
 nnoremap <leader>egl <CMD>Gitsign toggle_current_line_blame<CR>
 nnoremap <leader>eg- <CMD>Gitsign toggle_deleted<CR>
 
+nnoremap <leader>ett :TSBufToggle highlight<CR>
+
+" format json - should be automatic
+nnoremap <leader>efc :%!jq<CR>
+
+
+" Jump to last edit position on opening file
+if has("autocmd")
+  " https://stackoverflow.com/questions/31449496/vim-ignore-specifc-file-in-autocommand
+  au BufReadPost * if expand('%:p') !~# '\m/\.git/' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+
 " Gitsign toggle_current_line_blame*
 " Automatically install vim-plug
 " let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
