@@ -26,6 +26,7 @@ set scrolloff=4
 set sidescrolloff=8
 set noshowmode " lualine shows it
 set shell=bash\ -l
+set cursorline
 
 " https://github.com/jessarcher/dotfiles
 " set hidden
@@ -44,6 +45,7 @@ set shell=bash\ -l
 " set updatetime=300 " Reduce time for highlighting other references
 " set redrawtime=10000 " Allow more time for loading syntax on large files
 
+" https://jovicailic.org/2017/04/vim-persistent-undo/
 
 
 """ Coloring
@@ -83,6 +85,7 @@ nmap <S-Tab> :bprevious<CR>
 
 " Editor shortcuts
 nnoremap <leader>ww :w<CR> " Write file
+nnoremap <leader>wa :wa<CR> " Write all buffers
 nnoremap <leader>bb :bd<CR> " Close buffer 
 
 nnoremap <leader>el :set invnumber invrelativenumber<CR>
@@ -104,7 +107,14 @@ nnoremap <leader>ett :TSBufToggle highlight<CR>
 
 " format json - should be automatic
 nnoremap <leader>efc :%!jq<CR>
+nnoremap <leader>efs :call DeleteTrailingWS()<CR>
 
+
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
 
 " Jump to last edit position on opening file
 if has("autocmd")

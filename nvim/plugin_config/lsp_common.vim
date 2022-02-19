@@ -79,6 +79,7 @@ lua << END
 
     -- Mappings
     -- local opts = { noremap=true, silent=true }
+    -- https://github.com/neovim/nvim-lspconfig
     local opts = { noremap=true }
     buf_set_keymap('n', 'gD', '<CMD>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<CMD>lua vim.lsp.buf.definition()<CR>', opts)
