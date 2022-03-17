@@ -87,6 +87,7 @@ nmap <S-Tab> :bprevious<CR>
 nnoremap <leader>ww :w<CR> " Write file
 nnoremap <leader>wa :wa<CR> " Write all buffers
 nnoremap <leader>bb :bd<CR> " Close buffer 
+nnoremap <leader>wf :echo expand('%:p')<CR> " print full file name 
 
 nnoremap <leader>el :set invnumber invrelativenumber<CR>
 noremap <leader>ep :read !pbpaste<CR> " Paste system clipboard
@@ -109,6 +110,7 @@ nnoremap <leader>ett :TSBufToggle highlight<CR>
 nnoremap <leader>efc :%!jq<CR>
 nnoremap <leader>efs :call DeleteTrailingWS()<CR>
 
+"Show full path: echo @%
 
 func! DeleteTrailingWS()
   exe "normal mz"
@@ -167,6 +169,12 @@ source ~/.config/nvim/plugin_config/which-key.vim
 call plug#end()
 
 doautocmd User PlugLoaded
+
+
+" -- scroll down hover doc or scroll in definition preview
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+" -- scroll up hover doc
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 
 " https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
 lua require('basic')

@@ -81,6 +81,6 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	Privileges -bool true \
     Name -bool true
 
-https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+# https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
 
