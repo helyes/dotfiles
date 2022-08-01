@@ -3,6 +3,10 @@
 
 ulimit -S -n 2048
 
+# https://hobo.house/2017/07/17/using-italics-with-vim-in-your-terminal/
+# this is to support italics terminal
+export TERM=xterm-256color-italic
+
 # Don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 # ... and ignore same sucessive entries.
