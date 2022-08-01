@@ -16,7 +16,7 @@ set incsearch ignorecase smartcase hlsearch
 set ruler laststatus=2 showcmd
 set list listchars=trail:»,tab:»-
 " set listchars=tab:▸\ ,trail:·
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 set nowrap breakindent
 set encoding=utf-8
 set number
@@ -86,8 +86,8 @@ nmap <S-Tab> :bprevious<CR>
 " Editor shortcuts
 nnoremap <leader>ww :w<CR> " Write file
 nnoremap <leader>wa :wa<CR> " Write all buffers
-nnoremap <leader>bb :bd<CR> " Close buffer 
-nnoremap <leader>wf :echo expand('%:p')<CR> " print full file name 
+nnoremap <leader>bb :bd<CR> " Close buffer
+nnoremap <leader>wf :echo expand('%:p')<CR> " print full file name (path)
 
 nnoremap <leader>el :set invnumber invrelativenumber<CR>
 noremap <leader>ep :read !pbpaste<CR> " Paste system clipboard
@@ -109,6 +109,9 @@ nnoremap <leader>ett :TSBufToggle highlight<CR>
 " format json - should be automatic
 nnoremap <leader>efc :%!jq<CR>
 nnoremap <leader>efs :call DeleteTrailingWS()<CR>
+
+
+" :set filetype=html
 
 "Show full path: echo @%
 
