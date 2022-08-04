@@ -5,7 +5,8 @@ lua << END
 require'hop'.setup()
 END
 
-nnoremap <C-h> :HopChar2<CR>
+nnoremap <C-h> :HopChar1<CR>
+nnoremap <C-h><C-h> :HopChar2<CR>
 " <Option> h
 nnoremap  ˙ :HopWord<CR>
 

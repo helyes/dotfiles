@@ -6,12 +6,13 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-
-
 " For luasnip users.
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
+" LSP servers list
+" :help lspconfig-all
+" https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
 " https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 
@@ -20,6 +21,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 " npm install -g typescript typescript-language-server
 " npm install -g diagnostic-languageserver
 " npm i -g eslint_d prettier
+" npm install -g vim-language-server
 
 function LspCommonSetup()
 lua << END
@@ -79,7 +81,7 @@ lua << END
 
    -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
- 
+
   ---------- LSP config ----------
 
   local nvim_lsp = require('lspconfig')
@@ -136,7 +138,7 @@ lua << END
   nvim_lsp.tsserver.setup {
     on_attach = on_attach,
     capabilities = capabilities
-  } 
+  }
 
   -- Ruby
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
@@ -252,6 +254,33 @@ require'lspconfig'.bashls.setup{
       GLOB_PATTERN = "*@(.sh|.inc|.bash|.command|justfile)"
     }
 }
+
+-- brew install lua-language-server
+-- https://github.com/sumneko/lua-language-server
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
+require'lspconfig'.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
 
 END
 
