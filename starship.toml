@@ -75,11 +75,12 @@ $env_var\
 $crystal\
 $custom\
 $sudo\
+$fill\
+$time\
 $cmd_duration\
 $line_break\
 $jobs\
 $battery\
-$time\
 $status\
 $shell\
 $character"""
@@ -172,4 +173,11 @@ when = """ test "/Users/andras/work/sc/shiftcare-app" = $(pwd) """
 symbol = "v"
 style = "blue"
 format = "[$symbol$output]($style) "
+
+[fill]
+symbol = " "
+style = ""
+
+[cmd_duration]
+format = "[$duration]($style) "
 
