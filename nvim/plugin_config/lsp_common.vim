@@ -281,6 +281,8 @@ require'lspconfig'.sumneko_lua.setup {
   },
 }
 
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#taplo
+require'lspconfig'.taplo.setup{}
 
 END
 
