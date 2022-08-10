@@ -97,7 +97,8 @@ noremap <leader>ep :read !pbpaste<CR> " Paste system clipboard
 nnoremap <leader>egi :Git<CR>
 nnoremap <leader>ego :Git log<CR>
 nnoremap <leader>egb :Git blame<CR>
-nnoremap <leader>egd :Gdiffsplit<CR>
+nnoremap <leader>egd :Git diff<CR>
+nnoremap <leader>egD :Gdiffsplit<CR>
 nnoremap <leader>egs :Git status<CR>
 nnoremap <leader>egc :GBrowse<CR>
 nnoremap <leader>egh <CMD>lua require"gitsigns".blame_line{full=true}<CR>
