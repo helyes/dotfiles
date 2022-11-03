@@ -54,6 +54,10 @@ function forklift()
   openApp("ForkLift")
 end
 
+function slack()
+  openApp("Slack")
+end
+
 function toggleSleep()
   if (hs.caffeinate.toggle("systemIdle")) then
     hs.alert.show("Preventing sleep")
@@ -68,6 +72,7 @@ hs.hotkey.bind(hyper, 'b', chromium)
 -- hs.hotkey.bind(hyper, 'c', chrome)
 hs.hotkey.bind(hyper, 'f', firefox)
 -- hs.hotkey.bind(hyper, 'i', iterm)
+hs.hotkey.bind(hyper, 's', slack)
 hs.hotkey.bind(hyper, 'v', vscode)
 hs.hotkey.bind(hyper, 'z', forklift)
 
