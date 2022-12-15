@@ -69,6 +69,7 @@ end
 -- apps
 hs.hotkey.bind(hyper, 'a', alacritty)
 hs.hotkey.bind(hyper, 'b', chromium)
+hs.hotkey.bind(hyper, 'e', chromium)
 -- hs.hotkey.bind(hyper, 'c', chrome)
 hs.hotkey.bind(hyper, 'f', firefox)
 -- hs.hotkey.bind(hyper, 'i', iterm)

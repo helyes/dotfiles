@@ -208,14 +208,16 @@ lvim.plugins = {
 -- })
 
 -- Andras
-vim.opt.showmode = true
+    vim.opt.showmode = true
 vim.opt.relativenumber = true
 vim.opt.clipboard = ""
 
 -- to show end of line and dots on space
--- vim.opt.listchars:append "space:⋅"
 vim.opt.list = true
 vim.opt.listchars:append "eol:↴"
+vim.opt.listchars:append "trail:⋅"
+vim.opt.listchars:append "lead:⋅"
+-- vim.opt.listchars:append "space:⋅"
 
 vim.opt.termguicolors = true
 vim.cmd [[highlight IndentBlanklineIndent1 guibg=#1f1f1f gui=nocombine]]
