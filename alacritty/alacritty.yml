@@ -192,7 +192,7 @@ schemes:
       white:   '#e7e7e7'
 
   # Colors (Material Theme)
-  material_iterm: &material
+  material: &material
     # Default colors
     primary:
       background: '#263238'
@@ -286,13 +286,47 @@ schemes:
       cyan:    '0x5e81ac'
       white:   '0x8fbcbb'
 
+# Colors (One Dark) - https://github.com/alacritty/alacritty-theme/blob/master/themes/one_dark.yaml
+  one-dark: &one-dark
+    # Default colors
+    primary:
+      background: '0x0b0c0e'
+      foreground: '0xc5cad3'
+      # original one-dark
+      # above 2 shades darker background and brighter foreground
+      # https://www.w3schools.com/colors/colors_picker.asp
+      # background: '0x1e2127'
+      # foreground: '0xabb2bf'
+
+    # Normal colors
+    normal:
+      black:   '0x1e2127'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xd19a66'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0xabb2bf'
+
+    # Bright colors
+    bright:
+      black:   '0x5c6370'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xd19a66'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0xffffff'
+
 # Colors (Tomorrow Night)
 # https://github.com/alacritty/alacritty/wiki/Color-schemes
 # https://github.com/rajasegar/alacritty-themes/tree/master/themes
 # https://github.com/aarowill/base16-alacritty/tree/master/colors
-colors: *nord
+colors: *one-dark
 # colors: *nightfox
-  
+
 
   # Dim colors
   #

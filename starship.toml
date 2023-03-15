@@ -111,7 +111,7 @@ format = "[$path]($style) "
 truncate_to_repo = false
 truncation_length = 2
 truncation_symbol = "…/"
-style = "bg:Cyan fg:black" # can use hex too, example: bg:#DA627D
+style = "bg:blue fg:black" # can use hex too, example: bg:#DA627D
 
 [gcloud]
 disabled = true
