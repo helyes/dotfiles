@@ -104,6 +104,9 @@ scrolling:
   #multiplier: 3
 
 # Font configuration
+# Installing fonts: https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/
+# brew tap homebrew/cask-fonts
+# brew install --cask font-jetbrains-mono-nerd-font
 font:
   normal:
     # family: JetBrains Mono
@@ -121,7 +124,7 @@ font:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
   # use_thin_strokes: false - deprecated in 0.11
-  size: 16.0
+  size: 18.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

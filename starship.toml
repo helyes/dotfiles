@@ -1,6 +1,11 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+
+# Sppeed test: env STARSHIP_LOG=trace starship timings
+scan_timeout = 10
+command_timeout = 1200
+
 # Custom formats:
 # https://github.com/starship/starship/discussions/1252
 
@@ -160,26 +165,28 @@ style = "red"
 [custom.shiftcare_version]
 description = "Shiftcare version"
 command = "cat version 2>/dev/null | tr -d '\n'"
-when = """ test "/Users/andras/work/sc/shiftcare" = $(pwd) """
+# when = """ test "/Users/andras/work/sc/shiftcare" = $PWD """
+detect_files = [ 'version' ]
 symbol = "v"
 style = "blue"
 format = "[$symbol$output]($style) "
 
 
-[custom.shiftcare_app_version]
-description = "Shiftcare app version"
-command = """ grep "^project.ext.version*\\(Major\\|Minor\\|Patch\\)" android/app/build.gradle | awk -F "=" '{gsub (" ", "", $0);} NR > 1 {printf "." }; {printf "%s", $2}' """
-when = """ test "/Users/andras/work/sc/shiftcare-app" = $(pwd) """
-symbol = "v"
-style = "blue"
-format = "[$symbol$output]($style) "
+# [custom.shiftcare_app_version]
+# description = "Shiftcare app version"
+# command = """ grep "^project.ext.version*\\(Major\\|Minor\\|Patch\\)" android/app/build.gradle | awk -F "=" '{gsub (" ", "", $0);} NR > 1 {printf "." }; {printf "%s", $2}' """
+# when = """ test "/Users/andras/work/sc/shiftcare-app" = $(pwd) """
+# symbol = "v"
+# style = "blue"
+# format = "[$symbol$output]($style) "
 
 [fill]
 symbol = " "
 style = ""
 
 [cmd_duration]
-min_time = 250
+min_time = 10
 format = "[$duration]($style) "
 show_milliseconds = true
+
 
