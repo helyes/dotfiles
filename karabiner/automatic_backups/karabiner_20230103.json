@@ -138,12 +138,12 @@
                                     }
                                 },
                                 "to": [
-                                    {
-                                        "key_code": "s",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
+                                  {
+                                    "key_code": "s",
+                                    "modifiers": [
+                                        "left_control"
+                                    ]
+                                  }
                                 ],
                                 "type": "basic"
                             }
