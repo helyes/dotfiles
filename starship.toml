@@ -164,7 +164,8 @@ style = "red"
 
 [custom.shiftcare_version]
 description = "Shiftcare version"
-command = "cat version 2>/dev/null | tr -d '\n'"
+command = "cat version 2>/dev/null"
+# command = "cat version 2>/dev/null | tr -d '\n'"
 # when = """ test "/Users/andras/work/sc/shiftcare" = $PWD """
 detect_files = [ 'version' ]
 symbol = "v"

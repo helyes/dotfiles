@@ -211,7 +211,7 @@ lvim.plugins = {
 -- })
 
 -- Andras
-    vim.opt.showmode = true
+vim.opt.showmode = true
 vim.opt.relativenumber = true
 vim.opt.clipboard = ""
 
@@ -244,6 +244,18 @@ lvim.keys.normal_mode["<leader>bP"] = ":let @* = trim(execute(\"echo expand('%:p
 lvim.keys.normal_mode["<leader>sP"] = "<cmd>silent !tmux new-window tmsp.sh<cr>"
 -- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
+-- vim.api.nvim_command([[
+--     augroup ChangeBackgroudColour
+--         autocmd colorscheme * :hi normal guibg=#0a0a0a
+--     augroup END
+-- ]])
+
+-- vim.api.nvim_command([[
+--     augroup ChangeBackgroudColour
+--         autocmd colorscheme * :hi normal guibg=NONE
+--     augroup END
+-- ]])
+
 -- RUST: https://github.com/ChristianChiarulli/lvim/blob/master/lua/user/lsp/languages/rust.lua
 -- https://sharksforarms.dev/posts/neovim-rust
 
@@ -253,3 +265,34 @@ lvim.keys.normal_mode["<leader>sP"] = "<cmd>silent !tmux new-window tmsp.sh<cr>"
 --   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 --           \ | wincmd p | diffthis
 -- endif
+--
+--
+--
+--
+require'lspconfig'.lua_ls.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
+
+print(' hello .lua')
+-- get_runtime_dir()
+
