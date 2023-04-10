@@ -41,6 +41,8 @@ if status is-interactive
  fish_add_path -mP /usr/local/sbin
  fish_add_path -mP /usr/local/bin
 
+ fish_add_path  $HOME/.local/share/bob/nvim-bin
+
  string split " " $PATH
 end
 
