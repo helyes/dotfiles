@@ -18,6 +18,11 @@ if test $arch = "arm"
   echo "Arch is arm"
 end
 
+# Arm only for now, BEFORE loading paths
+if test $arch = "arm"
+  eval $(/opt/homebrew/bin/brew shellenv)
+end
+
 source ~/.config/fish/path.fish
 source ~/.config/fish/aliases.fish
 
@@ -30,7 +35,6 @@ source ~/.config/fish/aliases.fish
 
 # rbenv
 # To check: curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
-
 # Intel only for now
 if test $arch = "intel"
   set -gx RBENV_ROOT $HOME/work/.config/rbenv
