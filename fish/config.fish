@@ -1,5 +1,23 @@
 # set -gx NVM_DIR $HOME/.nvm
 
+switch $(uname -m)
+case "arm*"
+  set arch arm
+case "x86*"
+  set arch intel
+case "*"
+  # not setting arch -> will throw exception where it is being used
+  echo "!!!!!!!!Unknown architecture: $un May wan to check fish config"
+end
+
+if test $arch = "intel"
+  echo "Arch is intel"
+end
+
+if test $arch = "arm"
+  echo "Arch is arm"
+end
+
 source ~/.config/fish/path.fish
 source ~/.config/fish/aliases.fish
 
@@ -12,9 +30,12 @@ source ~/.config/fish/aliases.fish
 
 # rbenv
 # To check: curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
-set -gx RBENV_ROOT $HOME/work/.config/rbenv
-eval "$(rbenv init -)"
 
+# Intel only for now
+if test $arch = "intel"
+  set -gx RBENV_ROOT $HOME/work/.config/rbenv
+  eval "$(rbenv init -)"
+end
 
 # https://fishshell.com/docs/current/cmds/status.html
 # status is-interactive: returns 0 if fish is interactive - that is, connected to a keyboard.

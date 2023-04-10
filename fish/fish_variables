@@ -80,4 +80,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dreverse
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/Users/andras/\x2epub\x2dcache/bin\x1e/Users/andras/Applications/flutter/bin\x1e/Users/andras/Applications\x1e/usr/local/opt/fzf/bin
+SETUVAR fish_user_paths:/Users/andras/\x2elocal/share/bob/nvim\x2dbin\x1e/Users/andras/\x2epub\x2dcache/bin\x1e/Users/andras/Applications/flutter/bin\x1e/Users/andras/Applications\x1e/usr/local/opt/fzf/bin
