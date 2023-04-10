@@ -1,3 +1,4 @@
+require("user.globals")
 --[[
 
 lvim is the global options object
@@ -228,6 +229,8 @@ vim.opt.timeoutlen=200
 vim.cmd [[highlight IndentBlanklineIndent1 guibg=#1f1f1f gui=nocombine]]
 vim.cmd [[highlight IndentBlanklineIndent2 guibg=#1a1a1a gui=nocombine]]
 
+
+-- lvim.keys.normal_mode["<leader>xr"] = "<cmd>lua AHRA('havanadark')<cr>"
 
 -- yanking with leader copies to "
 -- https://github.com/ThePrimeagen/.dotfiles/blob/master/nvim/.config/nvim/after/plugin/keymap/init.lua
