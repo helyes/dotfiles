@@ -61,14 +61,22 @@ end
 if command -v zoxide > /dev/null
   zoxide init fish | source
 else
-  echo "Install zoxide: https://github.com/ajeetdsouza/zoxide"
+  echo "!!!Install zoxide: https://github.com/ajeetdsouza/zoxide"
 end
 
 if command -v starship > /dev/null
   starship init fish | source
 else
-  echo "Install starship: https://starship.rs/"
+  echo "!!!Install starship: https://starship.rs/"
 end
+
+if command -v rtx > /dev/null
+  # make sure rtx is in path
+  rtx activate fish | source
+else
+  echo "!!!Install rtx: https://github.com/jdxcode/rtx"
+end
+
 
 # colored man output
 # from http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/
