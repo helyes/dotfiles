@@ -53,6 +53,10 @@ end
 
 
 # fzf install: /usr/local/opt/fzf/install - Use uninstall script to remove fzf.
+# for fzf, create symlink:
+# M1:    sudo ln -s /opt/homebrew/opt /usr/local/opt
+# INTEL: sudo ln -s /usr/local/opt /opt/homebrew/opt
+
 
 if status is-interactive
 
