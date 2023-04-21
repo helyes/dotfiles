@@ -5,14 +5,14 @@ AHI = function(inspectable)
   return inspectable
 end
 
-AHRELOAD = function(...)
-  return require("plenary.reload").reload_module(...)
-end
+-- AHRELOAD = function(...)
+--   return require("plenary.reload").reload_module(...)
+-- end
 
-AHR = function(name)
-  AHRELOAD(name)
-  return require(name)
-end
+-- AHR = function(name)
+--   AHRELOAD(name)
+--   return require(name)
+-- end
 
 AHRA = function(plugin)
   local regex = "^" .. plugin
@@ -22,5 +22,6 @@ AHRA = function(plugin)
       package.loaded[k] = nil
     end
   end
+  print("Requiring " .. plugin)
   return require(plugin)
 end
