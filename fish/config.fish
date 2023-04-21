@@ -7,16 +7,16 @@ case "x86*"
   set arch intel
 case "*"
   # not setting arch -> will throw exception where it is being used
-  echo "!!!!!!!!Unknown architecture: $un May wan to check fish config"
+  echo "!!!!!!!!Unknown architecture: $(uname -m) May wan to check fish config"
 end
 
-if test $arch = "intel"
-  echo "Arch is intel"
-end
+# if test $arch = "intel"
+#   echo "Arch is intel"
+# end
 
-if test $arch = "arm"
-  echo "Arch is arm"
-end
+# if test $arch = "arm"
+#   echo "Arch is arm"
+# end
 
 # Arm only for now, BEFORE loading paths
 if test $arch = "arm"

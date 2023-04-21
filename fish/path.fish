@@ -34,7 +34,7 @@ if status is-interactive
  #export PATH="$PATH:${HOME}/work/.config/rbenv/versions/2.3.8/lib/ruby/gems/2.3.0/"
 
  # fix it, 
- fish_add_path -mP $HOME/.nvm/versions/node/v14.18.3/bin
+ # fish_add_path -mP $HOME/.nvm/versions/node/v14.18.3/bin
  
 
  # homebrew - leave it last to have the below two at the front of path

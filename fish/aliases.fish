@@ -55,6 +55,9 @@ end
 if command -v rg > /dev/null
   abbr -a grep "rg"
 end
+
+
+function cds; cd (fd -t f | fzf | xargs dirname); end
 # alias h="history"
 # alias vim=nvim
 
