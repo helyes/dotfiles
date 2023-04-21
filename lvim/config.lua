@@ -187,7 +187,15 @@ lvim.plugins = {
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
     },
+   {
+    "helyes/havanadark",
+    dir = "/Users/andras/work/helyes/vim/plugins/havanadark.nvim",
+    config = function()
+      vim.g.havanadark_italic_comments = true
+      vim.g.havanadark_italic_conditionals = true
+    end
 
+  },
 
   {
     -- nord colorscheme
