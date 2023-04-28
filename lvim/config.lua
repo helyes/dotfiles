@@ -219,12 +219,11 @@ lvim.plugins = {
 
 -- lua a = require("user.helpers").buffer_parent(); vim.cmd("Oil " .. a)
 lvim.builtin.which_key.mappings["o"] = { 
-    "<cmd>lua a = require('user.helpers').buffer_parent(); vim.cmd('Oil ' .. a)<cr>", "Open OIL in project root" 
+    "<cmd>lua a = require('user.helpers').buffer_parent(); vim.cmd('Oil ' .. a)<cr>", "Open OIL in current folder" 
 }
--- }
-
--- blah
-
+lvim.builtin.which_key.mappings["O"] = { 
+    "<cmd>Oil .<cr>", "Open OIL in project root" 
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
