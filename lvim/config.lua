@@ -1,4 +1,5 @@
 require("user.globals")
+require("user.helpers")
 --[[
 
 lvim is the global options object
@@ -57,7 +58,6 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 }
-
 
 -- enabled register listing on "
 lvim.builtin.which_key.setup.plugins.registers = true
@@ -193,6 +193,11 @@ lvim.plugins = {
      commit = "4044b53c4d4fcd", -- need this specific commit as newer ones use treesitter.compat
      event = "BufRead",
     },
+    {
+      'stevearc/oil.nvim',
+      config = function() require('oil').setup() end
+    },
+
   {
     "helyes/havanadark",
     dir = "/Users/andras/work/helyes/vim/plugins/havanadark.nvim",
@@ -207,9 +212,19 @@ lvim.plugins = {
     -- nord colorscheme
     "shaunsingh/nord.nvim",
     "folke/tokyonight.nvim",
-    "catppuccin/nvim"
+    "catppuccin/nvim",
+    "rebelot/kanagawa.nvim"
   }
 }
+
+-- lua a = require("user.helpers").buffer_parent(); vim.cmd("Oil " .. a)
+lvim.builtin.which_key.mappings["o"] = { 
+    "<cmd>lua a = require('user.helpers').buffer_parent(); vim.cmd('Oil ' .. a)<cr>", "Open OIL in project root" 
+}
+-- }
+
+-- blah
+
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
@@ -310,6 +325,5 @@ require'lspconfig'.lua_ls.setup {
 }
 
 
-print(' hello .lua')
--- get_runtime_dir()
+print('config.lua loaded')
 
