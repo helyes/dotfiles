@@ -325,4 +325,4 @@ require'lspconfig'.lua_ls.setup {
 
 
 print('config.lua loaded')
-
+require('user.lsp.rust_poco')
