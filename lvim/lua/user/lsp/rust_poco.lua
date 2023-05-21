@@ -75,18 +75,18 @@ lvim.keys.normal_mode["<M-k>"] = "<cmd>m-2<cr>"
 lvim.keys.normal_mode["<C-s>"] = "<cmd>w<cr>"
 lvim.keys.normal_mode["q"] = "<cmd>q<cr>"
 
-lvim.builtin.alpha.dashboard.section.header.val = {
-  [[             _       _                    _      ]],
-  [[ _ __   ___ (_) ___ | | __   ___ ___   __| | ___ ]],
-  [[| '_ \ / _ \| |/ _ \| |/ /  / __/ _ \ / _` |/ _ \]],
-  [[| |_) | (_) | | (_) |   <  | (_| (_) | (_| |  __/]],
-  [[| .__/ \___// |\___/|_|\_\  \___\___/ \__,_|\___|]],
-  [[|_|       |__/                                   ]],
-}
-local function footer()
-  return "Pojok Code"
-end
-lvim.builtin.alpha.dashboard.section.footer.val = footer()
+-- lvim.builtin.alpha.dashboard.section.header.val = {
+--   [[             _       _                    _      ]],
+--   [[ _ __   ___ (_) ___ | | __   ___ ___   __| | ___ ]],
+--   [[| '_ \ / _ \| |/ _ \| |/ /  / __/ _ \ / _` |/ _ \]],
+--   [[| |_) | (_) | | (_) |   <  | (_| (_) | (_| |  __/]],
+--   [[| .__/ \___// |\___/|_|\_\  \___\___/ \__,_|\___|]],
+--   [[|_|       |__/                                   ]],
+-- }
+-- local function footer()
+--   return "Pojok Code"
+-- end
+-- lvim.builtin.alpha.dashboard.section.footer.val = footer()
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
@@ -238,14 +238,14 @@ lvim.builtin.which_key.mappings["C"] = {
     end,
   })
 
-  table.insert(lvim.plugins, 
-  {
-    "j-hui/fidget.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("fidget").setup()
-    end,
-  })
+  -- table.insert(lvim.plugins, 
+  -- {
+  --   "j-hui/fidget.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("fidget").setup()
+  --   end,
+  -- })
 
 
 

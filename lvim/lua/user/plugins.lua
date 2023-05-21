@@ -9,10 +9,10 @@ lvim.plugins = {
       vim.api.nvim_set_keymap("n", "SS", ":HopWord<cr>", { silent = true })
     end,
   },
-    {
-      "folke/trouble.nvim",
-      cmd = "TroubleToggle",
-    },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
     {
      "nvim-treesitter/playground",
      commit = "4044b53c4d4fcd", -- need this specific commit as newer ones use treesitter.compat
@@ -22,7 +22,13 @@ lvim.plugins = {
       'stevearc/oil.nvim',
       config = function() require('oil').setup() end
     },
-
+    {
+     "j-hui/fidget.nvim",
+     event = "VeryLazy",
+     config = function()
+      require("fidget").setup()
+     end,
+  },
   {
     "helyes/havanadark",
     dir = "/Users/andras/work/helyes/vim/plugins/havanadark.nvim",
@@ -30,7 +36,6 @@ lvim.plugins = {
       vim.g.havanadark_italic_comments = true
       vim.g.havanadark_italic_conditionals = true
     end
-
   },
 
   {
