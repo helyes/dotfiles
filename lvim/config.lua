@@ -1,3 +1,5 @@
+-- reload defined here: /Users/andras/.local/share/lunarvim/lvim/lua/lvim/utils/modules.lua
+reload("user.plugins")
 require("user.globals")
 require("user.helpers")
 --[[
@@ -166,57 +168,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   },
 -- }
 
--- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
---  }
-lvim.plugins = {
-  {
-    "phaazon/hop.nvim",
-    event = "BufRead",
-    config = function()
-      require("hop").setup()
-      vim.api.nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "SS", ":HopWord<cr>", { silent = true })
-    end,
-  },
-    {
-      "folke/trouble.nvim",
-      cmd = "TroubleToggle",
-    },
-    {
-     "nvim-treesitter/playground",
-     commit = "4044b53c4d4fcd", -- need this specific commit as newer ones use treesitter.compat
-     event = "BufRead",
-    },
-    {
-      'stevearc/oil.nvim',
-      config = function() require('oil').setup() end
-    },
-
-  {
-    "helyes/havanadark",
-    dir = "/Users/andras/work/helyes/vim/plugins/havanadark.nvim",
-    config = function()
-      vim.g.havanadark_italic_comments = true
-      vim.g.havanadark_italic_conditionals = true
-    end
-
-  },
-
-  {
-    -- nord colorscheme
-    "shaunsingh/nord.nvim",
-    "folke/tokyonight.nvim",
-    "catppuccin/nvim",
-    "rebelot/kanagawa.nvim"
-  }
-}
-
 -- lua a = require("user.helpers").buffer_parent(); vim.cmd("Oil " .. a)
 lvim.builtin.which_key.mappings["o"] = { 
     "<cmd>lua a = require('user.helpers').buffer_parent(); vim.cmd('Oil ' .. a)<cr>", "Open OIL in current folder" 
@@ -325,4 +276,4 @@ require'lspconfig'.lua_ls.setup {
 
 
 print('config.lua loaded')
-require('user.lsp.rust_poco')
+-- require('user.lsp.rust_poco')
