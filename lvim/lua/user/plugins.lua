@@ -22,12 +22,9 @@ lvim.plugins = {
       'stevearc/oil.nvim',
       config = function() require('oil').setup() end
     },
-    {
-     "j-hui/fidget.nvim",
-     event = "VeryLazy",
-     config = function()
-      require("fidget").setup()
-     end,
+  {
+    "j-hui/fidget.nvim",
+    event = "VeryLazy",
   },
   {
     "helyes/havanadark",

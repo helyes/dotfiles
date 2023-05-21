@@ -95,12 +95,15 @@ formatters.setup {
 }
 
 -- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {
-  "lua",
-  "rust",
-  "toml",
-}
+-- lvim.builtin.treesitter.ensure_installed = {
+--   "lua",
+--   "rust",
+--   "toml",
+-- }
 
+-- Any changes to lvim.lsp.automatic_configuration.skipped_servers must be followed by :LvimCacheReset to take effect.
+-- /Users/andras/.local/share/lunarvim/lvim/lua/lvim/lsp/config.lua
+-- https://www.lunarvim.org/docs/configuration/language-features/language-servers
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 local formatters = require "lvim.lsp.null-ls.formatters"

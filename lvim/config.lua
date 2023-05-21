@@ -7,6 +7,7 @@ reload("user.options")
 reload("user.keymaps")
 
 
+reload("user.fidget")
 reload("user.treesitter")
 -- leave it last
 reload "user.whichkey"
