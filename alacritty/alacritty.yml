@@ -104,6 +104,7 @@ scrolling:
   #multiplier: 3
 
 # Font configuration
+# https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e
 # Installing fonts: https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/
 # brew tap homebrew/cask-fonts
 # brew install --cask font-jetbrains-mono-nerd-font
@@ -112,6 +113,13 @@ font:
     # family: JetBrains Mono
     # family: Hack Nerd Font Mono
     # *Mono.ttf fonts do not have ligeratures https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Ligatures/LightItalic/complete
+    # downlod from here: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.0/JetBrainsMono.zip
+    # unzip and drop files into Users/andras/Library/Fonts
+    # - JetBrains Mono Bold Italic Nerd Font Complete.ttf
+    # - JetBrains Mono Bold Nerd Font Complete.ttf
+    # - JetBrains Mono ExtraLight Italic Nerd Font Complete.ttf
+    # - JetBrains Mono ExtraLight Nerd Font Complete.ttf
+    # - JetBrains Mono Medium Nerd Font Complete.ttf
     family: JetBrainsMono Nerd Font
     style: ExtraLight
   bold:
