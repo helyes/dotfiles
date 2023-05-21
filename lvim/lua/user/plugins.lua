@@ -42,4 +42,3 @@ lvim.plugins = {
   }
 }
 
-print('plugins.lua loaded')
