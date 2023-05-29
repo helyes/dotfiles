@@ -1,3 +1,5 @@
+-- https://www.lunarvim.org/docs/configuration/keybindings
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 -- lvim.leader = "space"
 -- add your own keymapping
@@ -43,3 +45,6 @@ lvim.keys.normal_mode["<leader>bp"] = ":echo expand('%:p')<cr> " -- print full f
 lvim.keys.normal_mode["<leader>bP"] = ":let @* = trim(execute(\"echo expand('%:p')\"))<cr>"
 lvim.keys.normal_mode["<leader>sP"] = "<cmd>silent !tmux new-window tmsp.sh<cr>"
 
+--HOP
+vim.api.nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "SS", ":HopWord<cr>", { silent = true })

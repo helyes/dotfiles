@@ -25,7 +25,7 @@ local options = {
   -- same as default relativenumber = true, -- Show relative numberline
   -- same as default scrolloff = 8, -- Number of lines to keep above and below the cursor
   -- same as default shiftwidth = 2, -- Number of space inserted for indentation
-  showmode = false, -- Disable showing modes in command line
+ --  same as default showmode = false, -- Disable showing modes in command line
   -- same as default showtabline = 2, -- always display tabline
   -- same as default sidescrolloff = 8, -- Number of columns to keep at the sides of the cursor
   -- same as default signcolumn = "yes", -- Always show the sign column
@@ -35,14 +35,14 @@ local options = {
   -- same as default swapfile = false, -- Disable use of swapfile for the buffer
   -- same as default tabstop = 2, -- Number of space in a tab
   -- same as default termguicolors = true, -- Enable 24-bit RGB color in the TUI
-  timeoutlen = 300, -- Length of time to wait for a mapped sequence -- default: 200
+  --timeoutlen = 300, -- Length of time to wait for a mapped sequence -- default: 200
   -- same as default undofile = true, -- Enable persistent undo
   updatetime = 300, -- this many milliseconds nothing is typed the swap file will be written to disk
   wrap = true, -- Disable wrapping of lines longer than the width of window
-  writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+  -- same as default writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   -- minimal number of screen columns either side of cursor if wrap is `false`
   -- guifont = "monospace:h17", -- the font used in graphical neovim applications
-  guifont = "Source_Code_Pro:h17", -- the font used in graphical neovim applications
+  -- guifont = "Source_Code_Pro:h17", -- the font used in graphical neovim applications
   -- not needed, using defaults whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line
 }
 for k, v in pairs(options) do
@@ -222,24 +222,24 @@ lvim.builtin.which_key.mappings["C"] = {
 
 
   table.insert(lvim.plugins, { "simrat39/rust-tools.nvim", event = "VeryLazy" })
-  table.insert(lvim.plugins, 
-  {
-    "saecki/crates.nvim",
-    version = "v0.3.0",
-    event = "VeryLazy",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("crates").setup {
-        null_ls = {
-          enabled = true,
-          name = "crates.nvim",
-        },
-        popup = {
-          border = "rounded",
-        },
-      }
-    end,
-  })
+  -- table.insert(lvim.plugins, 
+  -- {
+  --   "saecki/crates.nvim",
+  --   version = "v0.3.0",
+  --   event = "VeryLazy",
+  --   dependencies = { "nvim-lua/plenary.nvim" },
+  --   config = function()
+  --     require("crates").setup {
+  --       null_ls = {
+  --         enabled = true,
+  --         name = "crates.nvim",
+  --       },
+  --       popup = {
+  --         border = "rounded",
+  --       },
+  --     }
+  --   end,
+  -- })
 
   -- table.insert(lvim.plugins, 
   -- {

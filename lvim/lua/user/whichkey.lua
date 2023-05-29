@@ -1,5 +1,13 @@
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["D"] = { "<cmd>Telescope projects<CR>", "Projects" }
+
+-- https://www.lunarvim.org/docs/configuration/keybindings
+-- to check whichkey mapping:
+--    lua AHI(lvim.builtin.which_key.mappings['s'])
+
+-- with vim (<TAB> works): verbose nmap <space>q
+
+
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },

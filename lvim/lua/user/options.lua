@@ -1,3 +1,6 @@
+-- Default settings:
+-- ~/.local/share/lunarvim/lvim/lua/lvim/config/settings.lua
+
 -- lvim.builtin.alpha.dashboard.section.header.val = {
 --   "    __                          _    ___         ",
 --   "   / /   __  ______  ____ _____| |  / (_)___ ___ ",
@@ -33,7 +36,7 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Andras
-vim.opt.showmode = true
+-- vim.opt.showmode = false, -- Disable showing modes in command line
 vim.opt.relativenumber = true
 vim.opt.clipboard = ""
 
@@ -46,8 +49,7 @@ vim.opt.listchars:append "lead:⋅"
 
 vim.opt.termguicolors = true
 
-vim.opt.timeoutlen=200
+vim.opt.timeoutlen=300 -- time to wait for a mapped key sequence to complete (in milliseconds)
 vim.cmd [[highlight IndentBlanklineIndent1 guibg=#1f1f1f gui=nocombine]]
 vim.cmd [[highlight IndentBlanklineIndent2 guibg=#1a1a1a gui=nocombine]]
-
 

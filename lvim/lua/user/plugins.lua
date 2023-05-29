@@ -5,8 +5,8 @@ lvim.plugins = {
     event = "BufRead",
     config = function()
       require("hop").setup()
-      vim.api.nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "SS", ":HopWord<cr>", { silent = true })
+      -- vim.api.nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true })
+      -- vim.api.nvim_set_keymap("n", "SS", ":HopWord<cr>", { silent = true })
     end,
   },
   {
@@ -25,6 +25,21 @@ lvim.plugins = {
   {
     "j-hui/fidget.nvim",
     event = "VeryLazy",
+  },
+  {
+    "saecki/crates.nvim",
+    version = "v0.3.0",
+    event = "VeryLazy",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    event = "VeryLazy",
+    run = "cd app && npm install",
+    ft = "markdown",
+    config = function()
+      vim.g.mkdp_auto_start = 1
+    end,
   },
   {
     "helyes/havanadark",
