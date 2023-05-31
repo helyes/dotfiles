@@ -34,8 +34,7 @@ lvim.plugins = {
   },
   {
     "iamcco/markdown-preview.nvim",
-    event = "VeryLazy",
-    run = "cd app && npm install",
+    build = "cd app && npm install",
     ft = "markdown",
     config = function()
       vim.g.mkdp_auto_start = 1

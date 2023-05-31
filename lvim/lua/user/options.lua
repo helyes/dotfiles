@@ -21,7 +21,7 @@ lvim.builtin.alpha.dashboard.section.footer.val = footer()
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "havanadark"
 -- lvim.use_icons = false -- to disable icons and use a minimalist setup, uncomment the following
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
