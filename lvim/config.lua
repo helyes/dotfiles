@@ -13,6 +13,8 @@ reload("user.treesitter")
 -- leave it last
 reload "user.whichkey"
 
+reload "user.lsp.dockerls"
+
 --[[
 
 lvim is the global options object
