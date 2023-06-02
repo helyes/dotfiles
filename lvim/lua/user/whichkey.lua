@@ -7,6 +7,8 @@
 
 -- with vim (<TAB> works): verbose nmap <space>q
 
+-- enabled register listing on "
+lvim.builtin.which_key.setup.plugins.registers = true
 
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
@@ -25,6 +27,14 @@ lvim.builtin.which_key.mappings["o"] = {
 lvim.builtin.which_key.mappings["O"] = {
     "<cmd>Oil .<cr>", "Open OIL in project root"
 }
--- enabled register listing on "
-lvim.builtin.which_key.setup.plugins.registers = true
 
+lvim.builtin.which_key.mappings["a"] = {
+  name = "A.I.",
+  c = { "<cmd>ChatGPT<cr>", "ChatGPT" },
+  a = { "<cmd>ChatGPTActAs<cr>", "Act As GPT" },
+  e = { "<cmd>ChatGPTEditWithInstructions<cr>", "Edit GPT" },
+  r = { "<cmd>ChatRunCustomCodeAction<cr>", "Code Action GPT" },
+  s = { "<cmd>Copilot suggestion<cr>", "Toggle Copilot Suggestion" },
+  p = { "<cmd>Copilot panel<cr>", "Toggle Copilot Panel" },
+  t = { "<cmd>Copilot toggle<cr>", "Toggle Copilot" },
+}

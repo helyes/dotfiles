@@ -40,6 +40,22 @@ lvim.plugins = {
       vim.g.mkdp_auto_start = 1
     end,
   },
+  -- AI
+  -- jackmort depends on nui
+  "MunifTanjim/nui.nvim",
+  "jackMort/ChatGPT.nvim",
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  },
   {
     "helyes/havanadark",
     dir = "/Users/andras/work/helyes/vim/plugins/havanadark.nvim",

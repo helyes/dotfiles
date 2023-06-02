@@ -10,6 +10,9 @@ reload("user.keymaps")
 reload("user.crates")
 reload("user.fidget")
 reload("user.treesitter")
+reload("user.copilot")
+reload("user.chatgpt")
+
 -- leave it last
 reload "user.whichkey"
 
