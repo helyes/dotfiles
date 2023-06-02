@@ -81,6 +81,8 @@ else
   echo "!!!Install rtx: https://github.com/jdxcode/rtx"
 end
 
+# google sdk - disabled now
+# source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
 
 # colored man output
 # from http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/
