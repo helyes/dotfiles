@@ -40,6 +40,8 @@ lvim.plugins = {
       vim.g.mkdp_auto_start = 1
     end,
   },
+  "jose-elias-alvarez/typescript.nvim",
+  "mxsdev/nvim-dap-vscode-js",
   -- AI
   -- jackmort depends on nui
   "MunifTanjim/nui.nvim",
