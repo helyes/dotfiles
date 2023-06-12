@@ -17,6 +17,7 @@ reload("user.chatgpt")
 reload "user.whichkey"
 
 reload "user.lsp.dockerls"
+reload "user.lsp.bashls"
 
 --[[
 
