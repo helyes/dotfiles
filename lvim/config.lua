@@ -18,6 +18,7 @@ reload "user.whichkey"
 
 reload "user.lsp.dockerls"
 reload "user.lsp.bashls"
+reload "user.lsp.typescript"
 
 --[[
 
