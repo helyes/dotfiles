@@ -12,6 +12,7 @@ reload("user.fidget")
 reload("user.treesitter")
 reload("user.copilot")
 reload("user.chatgpt")
+reload("user.nvim-ts-rainbow2")
 
 reload "user.lsp.dockerls"
 reload "user.lsp.bashls"
