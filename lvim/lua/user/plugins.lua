@@ -24,6 +24,9 @@ lvim.plugins = {
     },
   {
     "j-hui/fidget.nvim",
+    -- updated due to fidget.nvim will soon be rewritten. Please checkout the 'legacy' tag to avoid breaking changes.
+    -- legacy tag (https://github.com/j-hui/fidget.nvim/releases/tag/legacy) points to commit below
+    commit="0ba1e16d07627532b6c",
     event = "VeryLazy",
   },
   {
