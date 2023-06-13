@@ -19,6 +19,8 @@ reload "user.lsp.bashls"
 reload "user.lsp.typescript"
 
 reload("user.lsp_lines")
+reload("user.autocommands")
+
 
 -- leave it last
 reload "user.whichkey"
