@@ -13,12 +13,14 @@ reload("user.treesitter")
 reload("user.copilot")
 reload("user.chatgpt")
 
--- leave it last
-reload "user.whichkey"
-
 reload "user.lsp.dockerls"
 reload "user.lsp.bashls"
 reload "user.lsp.typescript"
+
+reload("user.lsp_lines")
+
+-- leave it last
+reload "user.whichkey"
 
 --[[
 
