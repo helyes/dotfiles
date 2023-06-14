@@ -43,3 +43,13 @@ lvim.builtin.which_key.mappings["lL"] = {
   -- "<CMD>lua require('user.lsp_lines').toggle(); vim.diagnostic.config({virtual_text = true})<CR>", "Toggle lsp_lines"
   "<CMD>lua require('user.lsp_lines').toggle()<CR>", "Toggle lsp_lines"
 }
+
+ lvim.builtin.which_key.mappings["g"]["t"] = {
+  name = "+Toggle",
+  b = { "<CMD>Gitsigns toggle_current_line_blame<CR>", "Blame" },
+  w = { "<CMD>Gitsigns toggle_word_diff<CR>", "Word diff" },
+  l = { "<CMD>Gitsigns toggle_linehl<CR>", "Line highlight" },
+  n = { "<CMD>Gitsigns toggle_numhl<CR>", "Num highlight" },
+  d = { "<CMD>Gitsigns toggle_deleted<CR>", "Deleted" },
+}
+
