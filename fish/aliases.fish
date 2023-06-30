@@ -5,31 +5,32 @@ abbr -a vim lvim
 abbr -a g git
 abbr -a gc 'git checkout'
 abbr -a ga 'git add '
-abbr -a gs 'git status' 
-abbr -a gsu 'git status -u' 
+abbr -a gs 'git status'
+abbr -a gsu 'git status -u'
 abbr -a vimdiff 'lvim -d'
 abbr -a amz 'env AWS_SECRET_ACCESS_KEY=(pass www/aws-secret-key | head -n1)'
 abbr -a ssh 'TERM=xterm-256color ssh'
 abbr -a ppath 'string split " " $PATH'
+abbr -a ppaths 'string split " " $PATH | fzf'
 
 abbr -a awspg11 'TERM=xterm-256color ssh -i /Users/andras/.ssh/shiftcare-andras.pem ec2-user@ec2-13-211-14-61.ap-southeast-2.compute.amazonaws.com'
 
 
 abbr -a tma 'tmux attach-session -t '
-abbr -a tmc 'tmux new -s ' 
+abbr -a tmc 'tmux new -s '
 abbr -a tml 'tmux ls'
 abbr -a tmk 'tmux kill-session -t '
 
 
-abbr -a cdw 'cd ~/work' 
-abbr -a du1 'du -d 1 -h ' 
-abbr -a du2 'du -d 2 -h ' 
-abbr -a du3 'du -d 3 -h ' 
+abbr -a cdw 'cd ~/work'
+abbr -a du1 'du -d 1 -h '
+abbr -a du2 'du -d 2 -h '
+abbr -a du3 'du -d 3 -h '
 abbr -a envs 'env | sort'
 abbr -a envf 'env | fzf'
-abbr -a tree1 'tree --dirsfirst -ChFL 1' 
-abbr -a tree2 'tree --dirsfirst -ChFL 2' 
-abbr -a tree3 'tree --dirsfirst -ChFL 3' 
+abbr -a tree1 'tree --dirsfirst -ChFL 1'
+abbr -a tree2 'tree --dirsfirst -ChFL 2'
+abbr -a tree3 'tree --dirsfirst -ChFL 3'
 
 
 # alias grep='grep --color=auto'
@@ -56,8 +57,12 @@ if command -v rg > /dev/null
   abbr -a grep "rg"
 end
 
-
 function cds; cd (fd -t f | fzf | xargs dirname); end
+
+
+abbr -a mprocs-db 'mprocs --config ~/work/sc/mprocs-database-tunnels.yaml'
+
+
 # alias h="history"
 # alias vim=nvim
 

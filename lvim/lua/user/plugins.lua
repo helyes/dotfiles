@@ -49,6 +49,8 @@ lvim.plugins = {
       vim.g.mkdp_auto_start = 1
     end,
   },
+  "NoahTheDuke/vim-just",
+
   "jose-elias-alvarez/typescript.nvim",
   "mxsdev/nvim-dap-vscode-js",
   -- AI
