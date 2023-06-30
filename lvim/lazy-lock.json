@@ -58,5 +58,6 @@
   "trouble.nvim": { "branch": "main", "commit": "2af0dd9767526410c88c628f1cbfcb6cf22dd683" },
   "typescript.nvim": { "branch": "main", "commit": "5b3680e5c386e8778c081173ea0c978c14a40ccb" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
+  "vim-just": { "branch": "main", "commit": "9fc9a1afaa9e3567b25f4141a01f6172a1992a0b" },
   "which-key.nvim": { "branch": "main", "commit": "4acffc92953a90a790603bfdab7c92319ab167b1" }
 }
