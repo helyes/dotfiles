@@ -100,9 +100,10 @@ add_newline = true
 # get icons from here: https://www.nerdfonts.com/cheat-sheet?v=1.0.20
 
 [aws]
-format = "[$symbol $region]($style)|"
+# format = "[$symbol $region]($style)|"
+format = '[$symbol($profile )(\($region\) )]($style)'
 style = "green"
-symbol = ""
+symbol = " "
 [aws.region_aliases]
 ap-southeast-2 = "au"
 
@@ -112,6 +113,9 @@ truncate_to_repo = false
 truncation_length = 2
 truncation_symbol = "…/"
 style = "bg:blue fg:black" # can use hex too, example: bg:#DA627D
+
+[docker_context]
+disabled = true
 
 [gcloud]
 disabled = true
