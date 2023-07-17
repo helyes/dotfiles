@@ -17,6 +17,7 @@ reload("user.nvim-ts-rainbow2")
 reload "user.lsp.dockerls"
 reload "user.lsp.bashls"
 reload "user.lsp.typescript"
+reload "user.lsp.rust"
 
 reload("user.lsp_lines")
 reload("user.autocommands")
