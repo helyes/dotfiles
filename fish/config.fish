@@ -59,7 +59,12 @@ end
 
 
 if status is-interactive
-
+ # history only needed in interactive mode
+  if command -v atuin > /dev/null
+    atuin init fish | source
+  else
+    echo "!!!Install atuin: https://github.com/atuinsh/atuin#install"
+  end
 end
 
 if command -v zoxide > /dev/null
