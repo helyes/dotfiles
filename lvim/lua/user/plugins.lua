@@ -50,7 +50,7 @@ lvim.plugins = {
     end,
   },
   "NoahTheDuke/vim-just",
-
+  'simrat39/rust-tools.nvim',
   "jose-elias-alvarez/typescript.nvim",
   "mxsdev/nvim-dap-vscode-js",
   -- AI
@@ -76,7 +76,6 @@ lvim.plugins = {
       vim.g.havanadark_italic_conditionals = true
     end
   },
-
   {
     -- nord colorscheme
     "shaunsingh/nord.nvim",

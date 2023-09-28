@@ -26,6 +26,8 @@ reload("user.autocommands")
 -- leave it last
 reload "user.whichkey"
 
+-- check toggle inline hints
+-- https://github.com/gennaro-tedesco/dotfiles/blob/7385fa7f2d28b9b3ac5f18f52894127e433ab81c/nvim/lua/plugins/lsp.lua#L46-L59
 --[[
 
 lvim is the global options object
