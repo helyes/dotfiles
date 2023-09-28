@@ -24,6 +24,9 @@ lvim.plugins = {
     },
   {
     "j-hui/fidget.nvim",
+    -- updated due to fidget.nvim will soon be rewritten. Please checkout the 'legacy' tag to avoid breaking changes.
+    -- legacy tag (https://github.com/j-hui/fidget.nvim/releases/tag/legacy) points to commit below
+    commit="0ba1e16d07627532b6c",
     event = "VeryLazy",
   },
   {
@@ -33,6 +36,12 @@ lvim.plugins = {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
+    url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  },
+  {
+  "HiPhish/nvim-ts-rainbow2",
+  },
+  {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
     ft = "markdown",
@@ -40,6 +49,10 @@ lvim.plugins = {
       vim.g.mkdp_auto_start = 1
     end,
   },
+  "NoahTheDuke/vim-just",
+  'simrat39/rust-tools.nvim',
+  "jose-elias-alvarez/typescript.nvim",
+  "mxsdev/nvim-dap-vscode-js",
   -- AI
   -- jackmort depends on nui
   "MunifTanjim/nui.nvim",
@@ -51,7 +64,6 @@ lvim.plugins = {
   },
   {
     "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
     config = function()
       require("copilot_cmp").setup()
     end,
@@ -64,7 +76,6 @@ lvim.plugins = {
       vim.g.havanadark_italic_conditionals = true
     end
   },
-
   {
     -- nord colorscheme
     "shaunsingh/nord.nvim",

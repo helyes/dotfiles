@@ -33,5 +33,5 @@ if test $arch = "arm"
 end
 
 
-echo 
+echo
 

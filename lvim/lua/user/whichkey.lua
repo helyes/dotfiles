@@ -1,5 +1,5 @@
 -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["D"] = { "<cmd>Telescope projects<CR>", "Projects" }
+-- lvim.builtin.which_key.mappings["D"] = { "<CMD>Telescope projects<CR>", "Projects" }
 
 -- https://www.lunarvim.org/docs/configuration/keybindings
 -- to check whichkey mapping:
@@ -12,29 +12,44 @@ lvim.builtin.which_key.setup.plugins.registers = true
 
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+  r = { "<CMD>Trouble lsp_references<CR>", "References" },
+  f = { "<CMD>Trouble lsp_definitions<CR>", "Definitions" },
+  d = { "<CMD>Trouble document_diagnostics<CR>", "Diagnostics" },
+  q = { "<CMD>Trouble quickfix<CR>", "QuickFix" },
+  l = { "<CMD>Trouble loclist<CR>", "LocationList" },
+  w = { "<CMD>Trouble workspace_diagnostics<CR>", "Workspace Diagnostics" },
 }
 
 -- lua a = require("user.helpers").buffer_parent(); vim.cmd("Oil " .. a)
 lvim.builtin.which_key.mappings["o"] = {
-    "<cmd>lua a = require('user.helpers').buffer_parent(); vim.cmd('Oil ' .. a)<cr>", "Open OIL in current folder"
+    "<CMD>lua a = require('user.helpers').buffer_parent(); vim.cmd('Oil ' .. a)<CR>", "Open OIL in current folder"
 }
 lvim.builtin.which_key.mappings["O"] = {
-    "<cmd>Oil .<cr>", "Open OIL in project root"
+    "<CMD>Oil .<CR>", "Open OIL in project root"
 }
 
 lvim.builtin.which_key.mappings["a"] = {
   name = "A.I.",
-  c = { "<cmd>ChatGPT<cr>", "ChatGPT" },
-  a = { "<cmd>ChatGPTActAs<cr>", "Act As GPT" },
-  e = { "<cmd>ChatGPTEditWithInstructions<cr>", "Edit GPT" },
-  r = { "<cmd>ChatRunCustomCodeAction<cr>", "Code Action GPT" },
-  s = { "<cmd>Copilot suggestion<cr>", "Toggle Copilot Suggestion" },
-  p = { "<cmd>Copilot panel<cr>", "Toggle Copilot Panel" },
-  t = { "<cmd>Copilot toggle<cr>", "Toggle Copilot" },
+  c = { "<CMD>ChatGPT<CR>", "ChatGPT" },
+  a = { "<CMD>ChatGPTActAs<CR>", "Act As GPT" },
+  e = { "<CMD>ChatGPTEditWithInstructions<CR>", "Edit GPT" },
+  r = { "<CMD>ChatRunCustomCodeAction<CR>", "Code Action GPT" },
+  s = { "<CMD>Copilot suggestion<CR>", "Toggle Copilot Suggestion" },
+  p = { "<CMD>Copilot panel<CR>", "Toggle Copilot Panel" },
+  t = { "<CMD>Copilot toggle<CR>", "Toggle Copilot" },
 }
+
+lvim.builtin.which_key.mappings["lL"] = {
+  -- "<CMD>lua require('user.lsp_lines').toggle(); vim.diagnostic.config({virtual_text = true})<CR>", "Toggle lsp_lines"
+  "<CMD>lua require('user.lsp_lines').toggle()<CR>", "Toggle lsp_lines"
+}
+
+ lvim.builtin.which_key.mappings["g"]["t"] = {
+  name = "+Toggle",
+  b = { "<CMD>Gitsigns toggle_current_line_blame<CR>", "Blame" },
+  w = { "<CMD>Gitsigns toggle_word_diff<CR>", "Word diff" },
+  l = { "<CMD>Gitsigns toggle_linehl<CR>", "Line highlight" },
+  n = { "<CMD>Gitsigns toggle_numhl<CR>", "Num highlight" },
+  d = { "<CMD>Gitsigns toggle_deleted<CR>", "Deleted" },
+}
+
