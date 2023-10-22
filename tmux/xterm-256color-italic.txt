@@ -1,0 +1,2 @@
+Copy 78/xterm-256color-italic to ~/.terminfo/78/xterm-256color-italic
+
