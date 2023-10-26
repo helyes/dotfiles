@@ -1,6 +1,13 @@
 -- https://www.lunarvim.org/docs/configuration/keybindings
 
--- keymappings [view all the defaults by pressing <leader>Lk]
+-- Listing keymap:
+ -- keymappings [view all the defaults by pressing <leader>Lk]
+ -- :verbose map  (imap, vmap, nmap)
+ -- Redirect to file:
+-- :redir! > vim_keys.txt
+-- :silent verbose map
+-- :redir END
+
 -- lvim.leader = "space"
 -- add your own keymapping
 --lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
