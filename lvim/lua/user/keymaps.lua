@@ -48,3 +48,8 @@ lvim.keys.normal_mode["<leader>sP"] = "<cmd>silent !tmux new-window tmsp.sh<cr>"
 --HOP
 vim.api.nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "SS", ":HopWord<cr>", { silent = true })
+
+-- https://www.reddit.com/r/neovim/comments/17g7hf3/how_useful_is_visual_mode/
+-- to move selected text down / up
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
