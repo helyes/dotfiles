@@ -1,3 +1,5 @@
+# brew completitions installed here: exa -l  /usr/local/share/fish/vendor_completions.d
+
 function __fish_just_complete_recipes
     # requires gsed (gnu sed)
     # https://github.com/casey/just/issues/1703
