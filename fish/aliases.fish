@@ -32,6 +32,10 @@ abbr -a tree1 'tree --dirsfirst -ChFL 1'
 abbr -a tree2 'tree --dirsfirst -ChFL 2'
 abbr -a tree3 'tree --dirsfirst -ChFL 3'
 
+# brew
+abbr -a brewlistdependencies 'brew leaves | xargs brew deps --formula --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
+abbr -a brewo 'brew outdated'
+abbr -a brewu 'brew upgrade'
 
 # alias grep='grep --color=auto'
 # alias fgrep='fgrep --color=auto'
