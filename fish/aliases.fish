@@ -1,7 +1,8 @@
 abbr -a abl 'abbr -l'
 abbr -a yc 'cal -y'
 abbr -a e lvim
-abbr -a vim lvim
+abbr -a vim nvim
+abbr -a v 'NVIM_APPNAME=nvchad nvim'
 abbr -a g git
 abbr -a gc 'git checkout'
 abbr -a ga 'git add '
