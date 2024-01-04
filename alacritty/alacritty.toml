@@ -1,0 +1,81 @@
+live_config_reload = true
+
+[bell]
+animation = "EaseOutQuint"
+color = "#2e3440"
+duration = 6
+
+# Colors (One Dark) - https://github.com/alacritty/alacritty-theme/blob/master/themes/one_dark.yaml
+
+[colors.bright]
+black = "0x5c6370"
+blue = "0x61afef"
+cyan = "0x56b6c2"
+green = "0x98c379"
+magenta = "0xc678dd"
+red = "0xe06c75"
+white = "0xffffff"
+yellow = "0xd19a66"
+
+[colors.normal]
+black = "0x1e2127"
+blue = "0x61afef"
+cyan = "0x56b6c2"
+green = "0x98c379"
+magenta = "0xc678dd"
+red = "0xe06c75"
+white = "0xabb2bf"
+yellow = "0xd19a66"
+
+# original one-dark
+# above 2 shades darker background and brighter foreground
+# https://www.w3schools.com/colors/colors_picker.asp
+# background: '0x1e2127'
+# foreground: '0xabb2bf'
+
+[colors.primary]
+background = "0x0b0c0e"
+foreground = "0xc5cad3"
+
+[font]
+size = 24.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Light Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Light"
+
+[font.offset]
+x = 1
+y = 0
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "F"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "B"
+mods = "Alt"
+
+[scrolling]
+history = 10000
+
+[window]
+decorations = "buttonless"
+
+[window.dimensions]
+columns = 150
+lines = 60
