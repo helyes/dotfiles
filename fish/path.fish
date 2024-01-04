@@ -1,7 +1,7 @@
 
 if status is-interactive
- echo "is-interactive"
- echo "Managing path..."
+ # echo "is-interactive"
+ # echo "Managing path..."
  #gpg
  set PATH $PATH /usr/local/opt/gnupg@1.4/libexec/gpgbin
 
@@ -41,12 +41,10 @@ if status is-interactive
  fish_add_path -mP /usr/local/sbin
  fish_add_path -mP /usr/local/bin
 
- fish_add_path -mP $HOME/.local/share/bob/nvim-bin
-
- string split " " $PATH
+ # string split " " $PATH
 end
 
 if status is-login
- echo "is-login..."
+ # echo "is-login..."
 end
 

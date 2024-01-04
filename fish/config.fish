@@ -79,11 +79,11 @@ else
   echo "!!!Install starship: https://starship.rs/"
 end
 
-if command -v rtx > /dev/null
-  # make sure rtx is in path
-  rtx activate fish | source
+if command -v mise > /dev/null
+  # make sure mise is in path
+  mise activate fish | source
 else
-  echo "!!!Install rtx: https://github.com/jdxcode/rtx"
+  echo "!!!Install mise: https://github.com/jdx/mise"
 end
 
 # google sdk - disabled now
