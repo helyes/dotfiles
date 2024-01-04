@@ -121,25 +121,25 @@ font:
     # - JetBrains Mono ExtraLight Nerd Font Complete.ttf
     # - JetBrains Mono Medium Nerd Font Complete.ttf
     family: JetBrainsMono Nerd Font
-    style: ExtraLight
+    style: Light
   bold:
     family: JetBrainsMono Nerd Font
     style: Bold
   italic:
     family: JetBrainsMono Nerd Font
-    style: ExtraLight Italic
+    style: Light Italic
   bold_italic:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
   # use_thin_strokes: false - deprecated in 0.11
-  size: 20.0
+  size: 24.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
   offset:
     x: 1
-    y: 2
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the

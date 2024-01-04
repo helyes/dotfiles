@@ -25,7 +25,7 @@ local options = {
   -- same as default relativenumber = true, -- Show relative numberline
   -- same as default scrolloff = 8, -- Number of lines to keep above and below the cursor
   -- same as default shiftwidth = 2, -- Number of space inserted for indentation
- --  same as default showmode = false, -- Disable showing modes in command line
+  --  same as default showmode = false, -- Disable showing modes in command line
   -- same as default showtabline = 2, -- always display tabline
   -- same as default sidescrolloff = 8, -- Number of columns to keep at the sides of the cursor
   -- same as default signcolumn = "yes", -- Always show the sign column
@@ -222,7 +222,7 @@ lvim.builtin.which_key.mappings["C"] = {
 
 
   table.insert(lvim.plugins, { "simrat39/rust-tools.nvim", event = "VeryLazy" })
-  -- table.insert(lvim.plugins, 
+  -- table.insert(lvim.plugins,
   -- {
   --   "saecki/crates.nvim",
   --   version = "v0.3.0",
@@ -241,7 +241,7 @@ lvim.builtin.which_key.mappings["C"] = {
   --   end,
   -- })
 
-  -- table.insert(lvim.plugins, 
+  -- table.insert(lvim.plugins,
   -- {
   --   "j-hui/fidget.nvim",
   --   event = "VeryLazy",

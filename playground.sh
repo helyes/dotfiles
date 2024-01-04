@@ -34,3 +34,25 @@
 #
 #
 
+# ask user for confirmation
+# read -p "Are you sure? " -r
+# echo
+# if [[ ! $REPLY =~ ^[Yy]$ ]]
+#  then
+#     echo "Exiting ..."
+#     exit 1
+# fi
+
+# APP=$(cat /tmp/1.txt)
+
+# check if file /tmp/1.txt exists
+if [ ! -f /tmp/1.txt ]; then
+   echo "File exists"
+ else 
+   echo "File does not exist"
+fi
+
+
+# print app in bold green
+# echo -e "\033[1;32m$APP\033[0m"
+# echo -e "\033[32m$APP\033[0m"
