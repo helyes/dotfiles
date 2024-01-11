@@ -29,6 +29,11 @@ local plugins = {
   },
 
   {
+    "NvChad/nvterm",
+    opts = overrides.nvterm
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },

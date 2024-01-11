@@ -40,6 +40,20 @@ M.mason = {
   },
 }
 
+-- https://github.com/NvChad/nvterm
+M.nvterm = {
+  terminals = {
+    type_opts = {
+      float = {
+        row = 0.2,
+        col = 0.15,
+        width = 0.7,
+        height = 0.6,
+      },
+    }
+  },
+}
+
 -- git support in nvimtree
 M.nvimtree = {
   git = {
