@@ -33,6 +33,18 @@ local plugins = {
     opts = overrides.nvterm
   },
 
+  -- This is an example using a function in opts
+  -- More here: https://nvchad.com/docs/config/plugins
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = function()
+      local conf = require "plugins.configs.telescope"
+      -- minimum terminal width required to render preview
+      conf.defaults.layout_config.preview_cutoff = 100
+      return conf
+    end,
+  },
+
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
