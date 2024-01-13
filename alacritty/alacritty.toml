@@ -75,6 +75,7 @@ history = 10000
 
 [window]
 decorations = "buttonless"
+option_as_alt = "OnlyLeft"
 
 [window.dimensions]
 columns = 150
