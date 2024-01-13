@@ -23,6 +23,9 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
+    "bash-language-server",
+    "shellcheck",
+
     -- lua stuff
     "lua-language-server",
     "stylua",
