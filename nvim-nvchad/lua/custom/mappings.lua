@@ -116,6 +116,18 @@ M.whichkey = {
   },
 }
 
+-- this is not ideal
+M.gitsigns = {
+  n = {
+    ["<leader>gg"] = {
+  function()
+    local term = require("nvterm.terminal").new("float")
+    vim.api.nvim_chan_send(term.job_id, "lazygit\n")
+  end,
+  "Open Lazygit",
+},
+  }
+}
 -- more keybinds!
 -- Disabled
 M.disabled = {
@@ -135,6 +147,11 @@ M.disabled = {
 
 
 -- simple remaps from nvchad code
+
+-- buffer
+remap_core_mapping("general", "n", "<leader>b", true, M, "tabufline", "<leader>bn")
+remap_core_mapping("tabufline", "n", "<leader>x", true, M, "tabufline", "<leader>bx")
+
 -- save file
 remap_core_mapping("general", "n", "<C-s>", true, M, "general", "<leader>w")
 
@@ -154,10 +171,15 @@ remap_core_mapping("gitsigns", "n", "<leader>td", true, M, "gitsigns", "<leader>
 remap_core_mapping("gitsigns", "n", "<leader>rh", true, M, "gitsigns", "<leader>gr")
 -- preview hunk
 remap_core_mapping("gitsigns", "n", "<leader>ph", true, M, "gitsigns", "<leader>gp")
+-- status [telescope]
+remap_core_mapping("telescope", "n", "<leader>gt", true, M, "gitsigns", "<leader>gs")
+-- commits [telescope]
+remap_core_mapping("telescope", "n", "<leader>cm", true, M, "gitsigns", "<leader>gc")
 
 -- lsp
 -- lsp rename
 remap_core_mapping("lspconfig", "n", "<leader>ra", true, M, "lspconfig", "<leader>lr")
+remap_core_mapping("general", "n", "<leader>fm", true, M, "lspconfig", "<leader>lm")
 
 
 return M
