@@ -12,25 +12,25 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require("custom.configs.null-ls")
         end,
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
     end, -- Override to setup mason-lspconfig
   },
 
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
     "NvChad/nvterm",
-    opts = overrides.nvterm
+    opts = overrides.nvterm,
   },
 
   -- This is an example using a function in opts
@@ -38,7 +38,7 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     opts = function()
-      local conf = require "plugins.configs.telescope"
+      local conf = require("plugins.configs.telescope")
       -- minimum terminal width required to render preview
       conf.defaults.layout_config.preview_cutoff = 100
       return conf
@@ -61,6 +61,43 @@ local plugins = {
     event = "InsertEnter",
     config = function()
       require("better_escape").setup()
+    end,
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        panel = {
+          keymap = {
+            jump_next = "<c-j>",
+            jump_prev = "<c-k>",
+            accept = "<c-l>",
+            refresh = "r",
+            open = "<M-CR>",
+          },
+        },
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          keymap = {
+            accept = "<c-l>",
+            next = "<c-j>",
+            prev = "<c-k>",
+            dismiss = "<c-h>",
+          },
+        },
+      })
+    end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = {
+      "zbirenbaum/copilot.lua",
+    },
+    config = function()
+      require("copilot_cmp").setup()
     end,
   },
 
