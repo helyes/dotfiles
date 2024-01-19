@@ -8,7 +8,15 @@ local core_mappings = require("core.mappings")
 ---@param custom_mappings MappingsTable
 ---@param custom_group string
 ---@param custom_key string
-local function remap_core_mapping(core_group, mode, core_key, disable_core_mapping, custom_mappings, custom_group, custom_key)
+local function remap_core_mapping(
+  core_group,
+  mode,
+  core_key,
+  disable_core_mapping,
+  custom_mappings,
+  custom_group,
+  custom_key
+)
   -- print(custom_mappings[custom_group])
 
   -- must be a better way. Checking if key exists in table
@@ -20,13 +28,12 @@ local function remap_core_mapping(core_group, mode, core_key, disable_core_mappi
     custom_mappings[custom_group][mode] = {}
   end
 
-  custom_mappings[custom_group][mode][custom_key] = core_mappings[core_group][mode][core_key];
+  custom_mappings[custom_group][mode][custom_key] = core_mappings[core_group][mode][core_key]
 
   if disable_core_mapping then
     custom_mappings.disabled[mode][core_key] = ""
   end
 end
-
 
 ---@type MappingsTable
 local M = {}
@@ -38,14 +45,14 @@ M.general = {
     [";"] = { ":", "Enter command mode", opts = { nowait = true } },
   },
   v = {
-    [">"] = { ">gv", "indent"},
+    [">"] = { ">gv", "indent" },
   },
 }
 
 M.telescope = {
   n = {
-    ["<leader>fk"] = { ":Telescope keymaps<CR>", "Find keymaps", }
-  }
+    ["<leader>fk"] = { ":Telescope keymaps<CR>", "Find keymaps" },
+  },
 }
 
 M.lspconfig = {
@@ -53,13 +60,13 @@ M.lspconfig = {
     -- also mapped to <leader>lf in core
     ["[f"] = {
       function()
-        vim.diagnostic.open_float { border = "rounded" }
+        vim.diagnostic.open_float({ border = "rounded" })
       end,
       "Floating diagnostic",
     },
     ["]f"] = {
       function()
-        vim.diagnostic.open_float { border = "rounded" }
+        vim.diagnostic.open_float({ border = "rounded" })
       end,
       "Floating diagnostic",
     },
@@ -87,30 +94,28 @@ M.lspconfig = {
       end,
       "Remove workspace folder",
     },
-
   },
-
 }
 
 M.chad = {
   n = {
-    ["<leader>fk"] = { ":Telescope keymaps<CR>", "Find keymaps", },
-    ["<leader>Nln"] = { ":edit $NVIM_LOG_FILE<CR>", "Neovim log", }, -- $NVIM_LOG_FILE
-    ["<leader>Nll"] = { ":lua vim.fn.execute('edit ' .. vim.lsp.get_log_path())<CR>", "LSP logfile", },
-  }
+    ["<leader>fk"] = { ":Telescope keymaps<CR>", "Find keymaps" },
+    ["<leader>Nln"] = { ":edit $NVIM_LOG_FILE<CR>", "Neovim log" }, -- $NVIM_LOG_FILE
+    ["<leader>Nll"] = { ":lua vim.fn.execute('edit ' .. vim.lsp.get_log_path())<CR>", "LSP logfile" },
+  },
 }
 
 M.whichkey = {
   n = {
     ["<leader>NK"] = {
       function()
-        vim.cmd "WhichKey"
+        vim.cmd("WhichKey")
       end,
       "Which-key all keymaps",
     },
     ["<leader>Nk"] = {
       function()
-        local input = vim.fn.input "WhichKey: "
+        local input = vim.fn.input("WhichKey: ")
         vim.cmd("WhichKey " .. input)
       end,
       "Which-key query lookup",
@@ -122,13 +127,13 @@ M.whichkey = {
 M.gitsigns = {
   n = {
     ["<leader>gg"] = {
-  function()
-    local term = require("nvterm.terminal").new("float")
-    vim.api.nvim_chan_send(term.job_id, "lazygit\n")
-  end,
-  "Open Lazygit",
-},
-  }
+      function()
+        local term = require("nvterm.terminal").new("float")
+        vim.api.nvim_chan_send(term.job_id, "lazygit\n")
+      end,
+      "Open Lazygit",
+    },
+  },
 }
 -- more keybinds!
 -- Disabled
@@ -145,8 +150,6 @@ M.disabled = {
     ["<leader>wr"] = "",
   },
 }
-
-
 
 -- simple remaps from nvchad code
 
@@ -185,6 +188,5 @@ remap_core_mapping("lspconfig", "n", "<leader>ra", true, M, "lspconfig", "<leade
 remap_core_mapping("general", "n", "<leader>fm", true, M, "lspconfig", "<leader>lm")
 remap_core_mapping("lspconfig", "n", "<leader>ca", true, M, "lspconfig", "<leader>la")
 remap_core_mapping("blankline", "n", "<leader>cc", true, M, "lspconfig", "<leader>lc")
-
 
 return M
