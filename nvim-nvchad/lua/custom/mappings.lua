@@ -94,7 +94,9 @@ M.lspconfig = {
 
 M.chad = {
   n = {
-    ["<leader>fk"] = { ":Telescope keymaps<CR>", "Find keymaps", }
+    ["<leader>fk"] = { ":Telescope keymaps<CR>", "Find keymaps", },
+    ["<leader>Nln"] = { ":edit $NVIM_LOG_FILE<CR>", "Neovim log", }, -- $NVIM_LOG_FILE
+    ["<leader>Nll"] = { ":lua vim.fn.execute('edit ' .. vim.lsp.get_log_path())<CR>", "LSP logfile", },
   }
 }
 
@@ -149,8 +151,8 @@ M.disabled = {
 -- simple remaps from nvchad code
 
 -- buffer
-remap_core_mapping("general", "n", "<leader>b", true, M, "tabufline", "<leader>bn")
-remap_core_mapping("tabufline", "n", "<leader>x", true, M, "tabufline", "<leader>bx")
+remap_core_mapping("general", "n", "<leader>b", true, M, "tabufline", "<leader>be")
+-- remap_core_mapping("tabufline", "n", "<leader>x", true, M, "tabufline", "<leader>bx")
 
 -- save file
 remap_core_mapping("general", "n", "<C-s>", true, M, "general", "<leader>w")
@@ -179,7 +181,10 @@ remap_core_mapping("telescope", "n", "<leader>cm", true, M, "gitsigns", "<leader
 -- lsp
 -- lsp rename
 remap_core_mapping("lspconfig", "n", "<leader>ra", true, M, "lspconfig", "<leader>lr")
+-- lsp format
 remap_core_mapping("general", "n", "<leader>fm", true, M, "lspconfig", "<leader>lm")
+remap_core_mapping("lspconfig", "n", "<leader>ca", true, M, "lspconfig", "<leader>la")
+remap_core_mapping("blankline", "n", "<leader>cc", true, M, "lspconfig", "<leader>lc")
 
 
 return M
