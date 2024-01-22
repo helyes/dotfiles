@@ -15,10 +15,12 @@ local function remap_core_mapping(
   disable_core_mapping,
   custom_mappings,
   custom_group,
-  custom_key
+  custom_key,
+  custom_text
 )
   -- print(custom_mappings[custom_group])
-
+  -- overwrite text only if custom_text is not nil
+  -- custom_text = custom_text or "-"
   -- must be a better way. Checking if key exists in table
   if custom_mappings[custom_group] == nil then
     custom_mappings[custom_group] = {}
@@ -29,6 +31,11 @@ local function remap_core_mapping(
   end
 
   custom_mappings[custom_group][mode][custom_key] = core_mappings[core_group][mode][core_key]
+
+  -- overwrite text only if custom_text is not nil
+  if custom_text ~= nil then
+    custom_mappings[custom_group][mode][custom_key][2] = custom_text
+  end
 
   if disable_core_mapping then
     custom_mappings.disabled[mode][core_key] = ""
@@ -133,6 +140,16 @@ M.gitsigns = {
       end,
       "Open Lazygit",
     },
+    ["<leader>gR"] = {
+      function()
+        require("gitsigns").reset_buffer()
+      end,
+      "Reset buffer",
+    },
+    ["<leader>gd"] = { ":Gitsigns diffthis HEAD<CR>", "Git diff" },
+    ["<leader>gs"] = { ":Gitsigns stage_hunk<CR>", "Stage hunk" },
+    ["<leader>gu"] = { ":Gitsigns undo_stage_hunk<CR>", "Stage hunk - Undo" },
+    ["<leader>gC"] = { ":Telescope git_bcommits<CR>", "Checkout commit this file" },
   },
 }
 -- more keybinds!
@@ -171,15 +188,15 @@ remap_core_mapping("general", "n", "<leader>rn", true, M, "chad", "<leader>NN")
 
 -- git
 -- toggle deleted
-remap_core_mapping("gitsigns", "n", "<leader>td", true, M, "gitsigns", "<leader>gd")
+remap_core_mapping("gitsigns", "n", "<leader>td", true, M, "gitsigns", "<leader>gD")
 -- reset hunk
 remap_core_mapping("gitsigns", "n", "<leader>rh", true, M, "gitsigns", "<leader>gr")
 -- preview hunk
 remap_core_mapping("gitsigns", "n", "<leader>ph", true, M, "gitsigns", "<leader>gp")
 -- status [telescope]
-remap_core_mapping("telescope", "n", "<leader>gt", true, M, "gitsigns", "<leader>gs")
+remap_core_mapping("telescope", "n", "<leader>gt", true, M, "telescope", "<leader>fc", "Open changed file")
 -- commits [telescope]
-remap_core_mapping("telescope", "n", "<leader>cm", true, M, "gitsigns", "<leader>gc")
+remap_core_mapping("telescope", "n", "<leader>cm", true, M, "gitsigns", "<leader>gc", "Checkout commit")
 
 -- lsp
 -- lsp rename
