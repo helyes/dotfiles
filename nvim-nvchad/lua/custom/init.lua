@@ -7,6 +7,7 @@ local autocmd = vim.api.nvim_create_autocmd
 -- })
 --
 vim.opt.relativenumber = true
+vim.opt.clipboard = ""
 
 -- highlight yank
 vim.cmd[[
