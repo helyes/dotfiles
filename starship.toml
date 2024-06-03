@@ -139,7 +139,7 @@ deleted_style = "red"
 format = "[$symbol ($version)]($style)|"
 version_format = "${major}.${minor}"
 style = "green"
-symbol = ""
+symbol = ""
 
 [package]
 format = "[$symbol ($version)]($style)|"
