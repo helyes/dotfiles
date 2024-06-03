@@ -68,7 +68,7 @@ if status is-interactive
 end
 
 if command -v zoxide > /dev/null
-  zoxide init fish | source
+  zoxide init --cmd cd fish | source
 else
   echo "!!!Install zoxide: https://github.com/ajeetdsouza/zoxide"
 end
