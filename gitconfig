@@ -27,6 +27,9 @@
 [alias]
 	fame = python loadtest.py  -m gitfame
   ptbranch = "! git-checkout-pt.sh -c -t \"$(pbpaste)\""
+  fomo = !git fetch origin master && git rebase origin/master
+  fomopc = !git fetch origin main && git rebase origin/main
+  cof = ! git branch | fzf --preview='sh -c \"git show -s  $(echo {})\"' | xargs git checkout
 [pull]
 	rebase = false
 [init]
