@@ -9,6 +9,7 @@ map("i", "jk", "<ESC>")
 
 -- telescope
 map("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "telescope keymaps" })
+map("n", "<leader>fr", "<cmd>Telescope resume<CR>", { desc = "telescope resume/last search" })
 -- local nomap = vim.keymap.del
 
 -- nomap("n", "<leader>b")
