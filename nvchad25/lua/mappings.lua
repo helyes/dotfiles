@@ -15,6 +15,12 @@ map("n", "<leader>fs", "<cmd>Telescope grep_string<CR>", { desc = "telescope sea
 -- nomap("n", "<leader>b")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
+
+-- NVIM
+map("n", "<leader>Nln", ":edit $NVIM_LOG_FILE<CR>", { desc = "nvchad open nvim log" })
+map("n", "<leader>Nll", ":lua vim.fn.execute('edit ' .. vim.lsp.get_log_path())<CR>", { desc = "nvchad lsp log" })
+
+
 -- TOGGLE (u)--
 -- git
 map("n", "<leader>ugb", "<CMD>Gitsigns toggle_current_line_blame<CR>", { desc = "toggle git current line blame" })
