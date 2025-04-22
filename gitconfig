@@ -34,3 +34,5 @@
 	rebase = false
 [init]
 	defaultBranch = master
+[safe]
+	bareRepository = explicit
