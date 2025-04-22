@@ -30,6 +30,9 @@ if status is-interactive
  set -gx CARGO_HOME $HOME/Applications/.cargo
  fish_add_path -P $CARGO_HOME/bin
 
+ # LM Studio CLI (lms)
+ fish_add_path set -aP /Users/andras/.lmstudio/bin
+
  # Neovim (nvim)
  #export PATH="$PATH:${HOME}/work/.config/rbenv/versions/2.3.8/lib/ruby/gems/2.3.0/"
 
