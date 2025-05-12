@@ -16,3 +16,15 @@ map(
 
 map("n", "<leader>xi", "<cmd>lua require('config.lsp_lines').toggle()<cr>", { desc = "Toggle lsp_lines" })
 
+map("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Oil ./" })
+map("n", "<leader>O", "<cmd>Oil --float .<cr>", { desc = "Oil (root dir)" })
+
+-- https://github.com/prdanelli/dotfiles/blob/main/neovim/lua/config/options.lua
+-- -- Ensure I dont freak out by hitting the cap w when exiting
+-- vim.cmd([[
+--   cnoreabbrev Wq wq
+--   cnoreabbrev wQ wq
+--   cnoreabbrev WQ wq
+--   cnoreabbrev W w
+--   cnoreabbrev Q q
+-- ]])
