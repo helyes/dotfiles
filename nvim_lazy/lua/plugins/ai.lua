@@ -18,4 +18,19 @@ return {
       copilot_node_command = "/Users/andras/.local/share/mise/installs/node/20.19.0/bin/node",
     },
   },
+  {
+    "olimorris/codecompanion.nvim",
+    enabled = true,
+    cmd = { "CodeCompanion" },
+    opts = {
+      strategies = {
+        chat = {
+          adapter = "copilot",
+        },
+        inline = {
+          adapter = "copilot",
+        },
+      },
+    },
+  },
 }
