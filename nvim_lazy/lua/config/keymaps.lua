@@ -19,12 +19,8 @@ map("n", "<leader>xi", "<cmd>lua require('config.lsp_lines').toggle()<cr>", { de
 map("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Oil ./" })
 map("n", "<leader>O", "<cmd>Oil --float .<cr>", { desc = "Oil (root dir)" })
 
--- https://github.com/prdanelli/dotfiles/blob/main/neovim/lua/config/options.lua
--- -- Ensure I dont freak out by hitting the cap w when exiting
--- vim.cmd([[
---   cnoreabbrev Wq wq
---   cnoreabbrev wQ wq
---   cnoreabbrev WQ wq
---   cnoreabbrev W w
---   cnoreabbrev Q q
--- ]])
+-- alacritty does not handle extended key events well
+-- https://github.com/neovim/neovim/issues/31282#issuecomment-2489733089
+-- https://www.reddit.com/r/neovim/comments/1bh3wkv/some_neovim_keybindings_not_working_properly_when/
+map({ "n", "t" }, "<M-/>", "<C-/>", { remap = true })
+
