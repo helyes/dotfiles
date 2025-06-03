@@ -50,11 +50,11 @@ style = "Bold Italic"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font"
-style = "Light Italic"
+style = "ExtraLight Italic"
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
-style = "Light"
+style = "ExtraLight"
 
 [font.offset]
 x = 1
