@@ -18,6 +18,8 @@ return {
       copilot_node_command = "/Users/andras/.local/share/mise/installs/node/20.19.0/bin/node",
     },
   },
+  -- https://www.youtube.com/watch?v=AUgbOckKxzw
+  -- https://github.com/smnatale/neovim-for-web-devs/blob/EP5/lua/plugins/ai.lua
   {
     "olimorris/codecompanion.nvim",
     enabled = true,
