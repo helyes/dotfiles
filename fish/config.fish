@@ -102,3 +102,8 @@ setenv LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
 setenv FZF_DEFAULT_COMMAND 'fd --type file --follow'
 setenv FZF_CTRL_T_COMMAND 'fd --type file --follow'
 setenv FZF_DEFAULT_OPTS '--height 40%'
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/andras/.lmstudio/bin
+# End of LM Studio CLI section
+
