@@ -42,27 +42,32 @@ abbr -a brewu 'brew upgrade'
 # alias fgrep='fgrep --color=auto'
 # alias egrep='egrep --color=auto'
 
-if command -v eza > /dev/null
-  abbr -a l 'eza'
-  abbr -a lg 'eza --long --header --icons --git'
-  abbr -a ls 'eza'
-  abbr -a ll 'eza -l'
-  abbr -a lll 'eza -la'
+if command -v eza >/dev/null
+    abbr -a l eza
+    abbr -a lg 'eza --long --header --icons --git'
+    abbr -a ls eza
+    abbr -a ll 'eza -l'
+    abbr -a lll 'eza -la'
 else
-  abbr -a l 'ls'
-  abbr -a ll 'ls -l'
-  abbr -a lll 'ls -la'
+    abbr -a l ls
+    abbr -a ll 'ls -l'
+    abbr -a lll 'ls -la'
 end
 
-if command -v fd > /dev/null
-  abbr -a find "fd"
+if command -v fd >/dev/null
+    abbr -a find fd
 end
 
-if command -v rg > /dev/null
-  abbr -a grep "rg"
+if command -v rg >/dev/null
+    abbr -a grep rg
 end
 
-function cds; cd (fd -t f | fzf | xargs dirname); end
+function cds
+    cd (fd -t f | fzf | xargs dirname)
+end
+
+abbr -a viml NVIM_APPNAME=nvim_lazy nvim
+abbr -a vimc NVIM_APPNAME=nvchad25 nvim
 
 
 abbr -a mprocs-db 'mprocs --config ~/work/sc/mprocs-database-tunnels.yaml'
@@ -100,7 +105,7 @@ abbr -a mprocs-db 'mprocs --config ~/work/sc/mprocs-database-tunnels.yaml'
 
 # #fun
 # alias weather='curl -4 http://wttr.in/Brisbane'
-# alias yolo='curl -s http://whatthecommit.com/index.txt'
+# alias yolo='curl -s https://whatthecommit.com/index.txt'
 
 # alias mongostart="brew services start mongodb; echo \"log: /usr/local/var/log/mongodb/mongo.log\""
 # alias mongostop="brew services stop mongodb"
