@@ -1,1 +1,1 @@
-source "/Users/andras/Applications/.cargo/env.fish"
+source "/Users/andras/Applications/cargo/env.fish"

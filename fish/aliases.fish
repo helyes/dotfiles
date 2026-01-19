@@ -2,7 +2,7 @@ abbr -a abl 'abbr -l'
 abbr -a yc 'cal -y'
 abbr -a e lvim
 abbr -a vim nvim
-abbr -a v 'NVIM_APPNAME=nvchad nvim'
+abbr -a v 'NVIM_APPNAME=nvim_lazy_11 nvim'
 abbr -a g git
 abbr -a gc 'git checkout'
 abbr -a ga 'git add '
@@ -66,8 +66,8 @@ function cds
     cd (fd -t f | fzf | xargs dirname)
 end
 
-abbr -a viml NVIM_APPNAME=nvim_lazy nvim
-abbr -a vimc NVIM_APPNAME=nvchad25 nvim
+# abbr -a viml NVIM_APPNAME=nvim_lazy nvim
+abbr -a vimchad NVIM_APPNAME=nvchad25 nvim
 
 
 abbr -a mprocs-db 'mprocs --config ~/work/sc/mprocs-database-tunnels.yaml'

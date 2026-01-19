@@ -1,0 +1,7 @@
+commit 803bc181d7c0d6d5eeba9274d9be49b287294d99 (HEAD -> main, origin/main, origin/HEAD)
+Author: Adrian Wilkins <adrian.wilkins@gmail.com>
+Date:   Wed Dec 11 16:56:39 2024 +0000
+
+    docs: Explain more about how to add and remove autocmds (#105)
+
+    Co-authored-by: Adrian Wilkins <adrian.wilkins.contractor@dvla.gov.uk>
